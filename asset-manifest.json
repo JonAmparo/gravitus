@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/gravitus/static/css/main.1ab79e8f.chunk.css",
+    "main.js": "/gravitus/static/js/main.b8810cf4.chunk.js",
+    "main.js.map": "/gravitus/static/js/main.b8810cf4.chunk.js.map",
+    "runtime-main.js": "/gravitus/static/js/runtime-main.10458df1.js",
+    "runtime-main.js.map": "/gravitus/static/js/runtime-main.10458df1.js.map",
+    "static/js/2.1479124e.chunk.js": "/gravitus/static/js/2.1479124e.chunk.js",
+    "static/js/2.1479124e.chunk.js.map": "/gravitus/static/js/2.1479124e.chunk.js.map",
+    "index.html": "/gravitus/index.html",
+    "precache-manifest.a1381c761d367c239543bb3da0410ad0.js": "/gravitus/precache-manifest.a1381c761d367c239543bb3da0410ad0.js",
+    "service-worker.js": "/gravitus/service-worker.js",
+    "static/css/main.1ab79e8f.chunk.css.map": "/gravitus/static/css/main.1ab79e8f.chunk.css.map",
+    "static/media/benchpress.jpg": "/gravitus/static/media/benchpress.eca2ded2.jpg",
+    "static/media/deadlift.jpg": "/gravitus/static/media/deadlift.a400fe03.jpg",
+    "static/media/gravitus-text.png": "/gravitus/static/media/gravitus-text.b4fec6bd.png",
+    "static/media/overheadpress.jpg": "/gravitus/static/media/overheadpress.ae02bc15.jpg",
+    "static/media/romaniandeadlift.jpg": "/gravitus/static/media/romaniandeadlift.2b743cd9.jpg",
+    "static/media/squat.jpg": "/gravitus/static/media/squat.e72a4caa.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.10458df1.js",
+    "static/js/2.1479124e.chunk.js",
+    "static/css/main.1ab79e8f.chunk.css",
+    "static/js/main.b8810cf4.chunk.js"
+  ]
+}
