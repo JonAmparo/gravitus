@@ -2,12 +2,24 @@
   "name": "gravitus",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://jonamparo.github.io/gravitus",
   "dependencies": {
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-scripts": "3.2.0"
+    "chart.js": "^2.9.0",
+    "chartjs-plugin-lineheight-annotation": "^0.3.5",
+    "gh-pages": "^2.1.1",
+    "node-sass": "^4.13.0",
+    "query-string": "^6.9.0",
+    "react": "^16.11.0",
+    "react-chartjs-2": "^2.8.0",
+    "react-dom": "^16.11.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0",
+    "slug": "^1.1.0",
+    "styled-components": "^4.4.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

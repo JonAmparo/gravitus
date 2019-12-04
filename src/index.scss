@@ -1,0 +1,66 @@
+img.iconchart {
+  height: 100px;
+  width: 75px;
+}
+
+nav {
+  background-color: #263238;
+  .nav-link {
+    color: white;
+  }
+}
+
+.nav-logo {
+  height: 4.5rem;
+  margin-right: 0.5rem;
+  width: 4.5rem;
+}
+
+.nav-item {
+  text-align: center;
+}
+
+.active {
+  color: rgb(255, 255, 255);
+  background-color: #000000;
+
+  &:hover {
+    color: firebrick;
+  }
+}
+
+.linkStyle {
+  color: #000000;
+
+  &:hover {
+    color: firebrick;
+  }
+}
+
+.wrapper {
+  padding: 3rem 3rem;
+  min-height: 100%;
+  // background-color: whitesmoke;
+  background-color: #263238;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: white;
+}
+
+img {
+  width: 125px;
+  height: 125px;
+  display: inline-block;
+}
+
+div.border-bottom {
+  border-bottom: 2px solid #303030;
+  width: 100%;
+}
