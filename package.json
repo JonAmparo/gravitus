@@ -7,15 +7,22 @@
     "chart.js": "^2.9.0",
     "chartjs-plugin-lineheight-annotation": "^0.3.5",
     "gh-pages": "^2.1.1",
+    "glamor": "^2.20.40",
+    "glamorous": "^5.0.0",
     "node-sass": "^4.13.0",
     "query-string": "^6.9.0",
     "react": "^16.11.0",
     "react-chartjs-2": "^2.8.0",
     "react-dom": "^16.11.0",
+    "react-icons": "^3.8.0",
+    "react-instagram-embed": "^1.5.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
+    "react-slick": "latest",
+    "slick-carousel": "^1.8.1",
     "slug": "^1.1.0",
-    "styled-components": "^4.4.1"
+    "styled-components": "^4.4.1",
+    "tabs": "^0.2.0"
   },
   "scripts": {
     "predeploy": "npm run build",
@@ -39,5 +46,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-plugin-react-hooks": "^2.3.0"
+  },
+  "plugins": [
+    "react-hooks"
+  ],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   }
 }

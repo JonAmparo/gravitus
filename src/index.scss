@@ -1,66 +1,111 @@
+// Site Colors
+$darkslategray: #22262a;
+$slategray: #6c757d;
+
+$color-primary: #003049;
+$color-secondary: firebrick;
+$color-hover: firebrick;
+$color-light: lightgrey;
+$color-mid: darken($color-light, 20%);
+$color-dark: darken($color-primary, 40%);
+
+$bg-prim: $darkslategray;
+
+.text-prim {
+  color: $color-primary;
+}
+
+.text-sec {
+  color: $color-secondary;
+}
+
+.bg-prim {
+  background-color: $bg-prim !important;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans,
+    Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+  color: white;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+.bg-site {
+  background-color: #22262a !important;
+}
+
+// ====================== HEADER  ========================= //
+
+.active {
+  // color: rgb(255, 255, 255);
+  // background-color: #000000;
+  color: white;
+  // border-bottom: 2px solid firebrick;
+
+  &:hover {
+    text-decoration: underline;
+    color: white;
+    // color: $color-hover;
+  }
+}
+
+.linkStyle {
+  color: $slategray;
+  border-bottom: 2px solid transparent;
+
+  &:hover {
+    color: white;
+  }
+}
+
+// ====================== ARTICLES  ========================= //
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 2px solid rgb(131, 131, 131);
+}
+.separator::after {
+  margin-left: 0.45em;
+}
+
+// img {
+//   width: 125px;
+//   height: 125px;
+//   display: inline-block;
+//   padding-bottom: 15px;
+// }
+
 img.iconchart {
   height: 100px;
   width: 75px;
 }
 
-nav {
-  background-color: #263238;
-  .nav-link {
-    color: white;
-  }
-}
-
-.nav-logo {
-  height: 4.5rem;
-  margin-right: 0.5rem;
-  width: 4.5rem;
-}
-
-.nav-item {
-  text-align: center;
-}
-
-.active {
-  color: rgb(255, 255, 255);
-  background-color: #000000;
-
-  &:hover {
-    color: firebrick;
-  }
-}
-
-.linkStyle {
-  color: #000000;
-
-  &:hover {
-    color: firebrick;
-  }
-}
-
-.wrapper {
-  padding: 3rem 3rem;
-  min-height: 100%;
-  // background-color: whitesmoke;
-  background-color: #263238;
-}
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: white;
-}
-
-img {
-  width: 125px;
-  height: 125px;
-  display: inline-block;
-}
-
 div.border-bottom {
   border-bottom: 2px solid #303030;
   width: 100%;
+}
+
+.display-linebreak {
+  white-space: pre-line;
 }

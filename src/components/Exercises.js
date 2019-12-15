@@ -2,18 +2,74 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { getExercises } from '../api';
 import Loading from './Loading';
+import CheckBox from './CheckBox';
+import glamorous from 'glamorous';
 
-function Exercises(props) {
+const Images = glamorous.img({
+  width: '100%',
+  height: '250px'
+});
+
+function useMuscle() {
   const [exercises, setExercises] = React.useState(null);
+  const [cachedExercises, setCachedExercises] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
 
-  const { match } = props;
+  let muscleGroup;
+
+  const showAll = event => {
+    getExercises().then(exercises => {
+      setExercises(cachedExercises);
+    });
+  };
+
+  const filterMuscle = event => {
+    if (event.target.value) {
+      muscleGroup = cachedExercises
+        .map(exercises => {
+          return { ...exercises, muscles: exercises.muscles };
+        })
+        .filter(exercises => {
+          return exercises.muscles === event.target.value;
+        })
+        .map(exercises => exercises);
+    }
+
+    let muscleArr = [];
+    let elementName = document.getElementsByName('muscle');
+
+    for (var i = 0; i < elementName.length; i++) {
+      if (elementName[i].checked) {
+        muscleArr.push(elementName[i].value);
+      }
+    }
+    // console.log('muscleArr:', muscleArr);
+    // console.log('muscleGroup:', muscleGroup);
+
+    if (muscleArr.length <= 0) {
+      return getExercises().then(exercises => {
+        setExercises(exercises);
+      });
+    } else if (muscleArr.length > 0) {
+      getExercises().then(setExercises(muscleGroup));
+      // console.log('cachedExercises #1:', cachedExercises);
+      // cachedExercises.map(exercise => {
+      //   for (let k in exercise) {
+      //     if (exercise[k] === event.target.value) {
+      //       // console.log('WORKING!!!: ', exercise[k]);
+      //       // console.log('exercises:', exercise);
+      //     }
+      //   }
+      // });
+    }
+  };
 
   React.useEffect(() => {
     getExercises()
       .then(exercises => {
         setExercises(exercises);
+        setCachedExercises(exercises);
         setLoading(false);
         setError(null);
       })
@@ -24,6 +80,19 @@ function Exercises(props) {
       });
   }, []);
 
+  return {
+    exercises,
+    showAll,
+    loading,
+    error,
+    filterMuscle
+  };
+}
+
+export default function Exercises(props) {
+  const { exercises, loading, error, filterMuscle, showAll } = useMuscle();
+  const { match } = props;
+
   if (error) {
     return <p className='center-text error'>{error}</p>;
   }
@@ -32,22 +101,79 @@ function Exercises(props) {
     <Loading />
   ) : (
     <React.Fragment>
-      <h1>Exercises</h1>
-      {exercises.map((exercises, index) => (
-        <div key={exercises.id + exercises.name}>
-          <Link
-            to={{
-              pathname: `${match.url}/${exercises.link}`,
-              state: { exercises }
-            }}
-          >
-            <h3>{exercises.name}</h3>
-            <img src={exercises.image} alt={exercises.name} />
-          </Link>
+      <h1 className='text-center'>Exercises</h1>
+      <div className='row'>
+        <div className='col-lg-2 col-md-3 col-sm-4'>
+          <h3>Muscles</h3>
+          <ul className='list-unstyled'>
+            <CheckBox
+              onChange={showAll}
+              type='radio'
+              value='Show All'
+              props={props}
+            />
+            <CheckBox
+              onChange={filterMuscle}
+              type='radio'
+              value='Lower Body'
+              id='Lower Body'
+              props={props}
+            />
+            <CheckBox
+              onChange={filterMuscle}
+              type='radio'
+              value='Upper Body'
+              id='Upper Body'
+              props={props}
+            />
+            <CheckBox
+              onChange={filterMuscle}
+              type='radio'
+              value='Cardio'
+              id='Cardio'
+              props={props}
+            />
+          </ul>
         </div>
-      ))}
+        <div className='col-lg-10 col-md-9 col-sm-8'>
+          {exercises.map((exercises, index) => (
+            <div
+              key={exercises.id + exercises.name + index}
+              className='row justify-content-between py-2'
+            >
+              <div className='col-lg-6'>
+                <Link
+                  to={{
+                    pathname: `${match.url}/${exercises.link}`,
+                    state: { exercises }
+                  }}
+                >
+                  <Images src={exercises.image} alt={exercises.name} />
+                </Link>
+              </div>
+              <div className='col-lg-6 '>
+                <Link
+                  to={{
+                    pathname: `${match.url}/${exercises.link}`,
+                    state: { exercises }
+                  }}
+                >
+                  <h4 className="text-white">{exercises.name}</h4>
+                </Link>
+                <p className="text-secondary">{exercises.description}</p>
+                <Link
+                  to={{
+                    pathname: `${match.url}/${exercises.link}`,
+                    state: { exercises }
+                  }}
+                >
+                  <button className='btn btn-outline-light'>LEARN MORE</button>
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </React.Fragment>
   );
 }
-
-export default Exercises;

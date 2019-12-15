@@ -1,20 +1,39 @@
 import React from 'react';
+import UserWorkout from '../components/UserWorkout';
 import { users } from '../dummy-data';
 
 export default function Home() {
   return (
-    <div>
+    <React.Fragment>
       <h1 className='text-center'>Home Page</h1>
       <div className='my-2'>
         <ul>
-          {console.log('profile:', users[0].id)}
-          <div>
-            {/* {users.map((user, index) => {
-              user.workout.map(workout => <div key={index}></div>);
-            })} */}
-          </div>
+          {users.map(item =>
+            // If id = 1, then show user id with 1
+            item.id === 2
+              ? // ? item.workout.reverse().map(workout => (
+                item.workout.map(workout => (
+                  <UserWorkout
+                    key={item.id + item.name + workout.workoutId}
+                    id={item.id}
+                    imageURL={item.imageURL}
+                    name={item.name}
+                    workout={workout.workout}
+                    workoutId={workout.workoutId}
+                    workoutName={workout.name}
+                    workoutDuration={workout.duration}
+                    workoutDate={workout.date.toLocaleDateString('default', {
+                      month: 'long',
+                      day: 'numeric',
+                      year: 'numeric'
+                    })}
+                    thumbsup
+                  />
+                ))
+              : null
+          )}
         </ul>
       </div>
-    </div>
+    </React.Fragment>
   );
 }

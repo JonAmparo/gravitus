@@ -4,7 +4,6 @@ import squat from './assets/images/squat.jpg';
 import deadlift from './assets/images/deadlift.jpg';
 import overheadpress from './assets/images/overheadpress.jpg';
 import romaniandeadlift from './assets/images/romaniandeadlift.jpg';
-import stairmaster from './assets/images/stairmaster.jpg';
 
 // ArticleInfo Imports
 import article1 from './assets/images/article1.jpg';
@@ -13,19 +12,10 @@ import article4 from './assets/images/article4.jpg';
 
 const exercises = [
   {
-    id: 0,
-    name: 'Stair Master',
-    image: stairmaster,
-    muscles: 'Cardio',
-    description: 'Stair master description here... Climb stairs',
-    tips: 'Advice advice advice...',
-    link: 'stairmaster'
-  },
-  {
     id: 1,
     name: 'Bench Press',
     image: benchpress,
-    muscles: 'Upper Body',
+    muscles: 'upper',
     description:
       'Lie back on a flat bench. Using a medium width grip (a grip that creates a 90-degree angle in the middle of the movement between the forearms and the upper arms), lift the bar from the rack and hold it straight over you with your arms locked. This will be your starting position.',
     tips: 'Advice advice advice...',
@@ -35,7 +25,7 @@ const exercises = [
     id: 2,
     name: 'Squat',
     image: squat,
-    muscles: 'Lower Body',
+    muscles: 'lower',
     description:
       'This exercise is best performed inside a squat rack for safety purposes. To begin, first set the bar on a rack just above shoulder level. Once the correct height is chosen and the bar is loaded, step under the bar and place the back of your shoulders (slightly below the neck) across it.',
     tips: 'Advice advice advice...',
@@ -45,7 +35,7 @@ const exercises = [
     id: 3,
     name: 'Deadlift',
     image: deadlift,
-    muscles: 'Lower Body',
+    muscles: 'lower',
     description:
       'To deadlift with short bands, simply loop them over the bar before you start, and step into them to set up. For long bands, they will need to be anchored to a secure base, such as heavy dumbbells or a rack.',
     tips: 'Advice advice advice...',
@@ -55,7 +45,7 @@ const exercises = [
     id: 4,
     name: 'Overhead Press',
     image: overheadpress,
-    muscles: 'Upper Body',
+    muscles: 'upper',
     description:
       'Start by placing a barbell that is about chest high on a squat rack. Once you have selected the weights, grab the barbell using a pronated (palms facing forward) grip. Make sure to grip the bar wider than shoulder width apart from each other.',
     tips: 'Advice advice advice...',
@@ -65,7 +55,7 @@ const exercises = [
     id: 5,
     name: 'Romanian Deadlifts',
     image: romaniandeadlift,
-    muscles: 'Lower Body',
+    muscles: 'lower',
     description:
       'Hold a bar at hip level with a pronated (palms facing down) grip. Your shoulders should be back, your back arched, and your knees slightly bent. This will be your starting position.',
     tips: 'Advice advice advice...',
@@ -75,14 +65,14 @@ const exercises = [
 
 const users = [
   {
-    id: 0,
+    id: 1,
     name: 'Jonathan Amparo',
     username: 'JonAmparo',
     password: '123123',
     age: 24,
     imageURL: '',
     occupation: 'Front End Developer',
-    website: 'https://jonamparo.com',
+    website: 'https://jonamparo.github.io/portfolio/index.html',
     twitter: '@Murdar0',
     facebook: false,
     github: 'JonAmparo',
@@ -92,12 +82,12 @@ const users = [
         workoutId: 1,
         name: 'Upper Body',
         duration: '1 Hrs 30 Min',
-        date: new Date('November 25, 2019'),
+        date: new Date('December 5, 2019'),
         volume: 20000,
         exercise: [
           {
-            benchpress: 75,
-            overheadpress: 75
+            benchpress: 100,
+            overheadpress: 150
           }
         ]
       },
@@ -105,19 +95,19 @@ const users = [
         workoutId: 2,
         name: 'Leg Day',
         duration: '1 Hrs 30 Min',
-        date: new Date('November 27, 2019'),
+        date: new Date('December 4, 2019'),
         volume: 21000
       },
       {
         workoutId: 3,
         name: 'Upper Body',
         duration: '1 Hrs 30 Min',
-        date: new Date('November 28, 2019'),
+        date: new Date('December 3, 2019'),
         volume: 22500,
         exercise: [
           {
             benchpress: 100,
-            overheadpress: 125
+            overheadpress: 150
           }
         ]
       },
@@ -125,7 +115,7 @@ const users = [
         workoutId: 4,
         name: 'Leg Day',
         duration: '1 Hrs 30 Min',
-        date: new Date('November 29, 2019'),
+        date: new Date('December 1, 2019'),
         volume: 18000
       },
       {
@@ -136,8 +126,8 @@ const users = [
         volume: 23000,
         exercise: [
           {
-            benchpress: 150,
-            overheadpress: 175
+            benchpress: 100,
+            overheadpress: 150
           }
         ]
       },
@@ -145,48 +135,48 @@ const users = [
         workoutId: 6,
         name: 'Leg Day',
         duration: '1 Hrs 30 Min',
-        date: new Date('November 31, 2019'),
+        date: new Date('November 29, 2019'),
         volume: 24000
       },
       {
         workoutId: 7,
         name: 'Leg Day',
         duration: '1 Hrs 30 Min',
-        date: new Date('December 1, 2019'),
+        date: new Date('November 28, 2019'),
         volume: 24000
       },
       {
         workoutId: 8,
         name: 'Leg Day',
         duration: '1 Hrs 30 Min',
-        date: new Date('December 2, 2019'),
+        date: new Date('November 27, 2019'),
         volume: 24000
       },
       {
         workoutId: 9,
         name: 'Leg Day',
         duration: '1 Hrs 30 Min',
-        date: new Date('December 3, 2019'),
+        date: new Date('November 25, 2019'),
         volume: 24000
       },
       {
         workoutId: 10,
         name: 'Bicep Day',
         duration: '1 Hrs 30 Min',
-        date: new Date('December 4, 2019'),
+        date: new Date('November 24, 2019'),
         volume: 24000
       },
       {
         workoutId: 11,
         name: 'Neck Day',
         duration: '1 Hrs 30 Min',
-        date: new Date('December 5, 2019'),
+        date: new Date('November 22, 2019'),
         volume: 24000
       }
     ]
   },
   {
-    id: 1,
+    id: 2,
     name: 'Dwayne Wade',
     username: 'DwayneWade',
     password: '123123',
@@ -201,50 +191,50 @@ const users = [
     workout: [
       {
         workoutId: 1,
-        name: 'Shoot around',
+        name: 'shoot around',
         duration: '1 Hrs 30 Min',
-        date: new Date('November 25, 2019'),
+        date: new Date('December 5, 2019'),
         volume: '20000'
       },
       {
         workoutId: 2,
-        name: 'Dribble practice',
+        name: 'dribble practice',
         duration: '1 Hrs 30 Min',
-        date: new Date('November 26, 2019'),
+        date: new Date('December 3, 2019'),
         volume: '21000'
       },
       {
         workoutId: 3,
-        name: 'Shoot around',
+        name: 'shoot around',
         duration: '1 Hrs 30 Min',
-        date: new Date('November 27, 2019'),
+        date: new Date('December 1, 2019'),
         volume: '22500'
       },
       {
         workoutId: 4,
-        name: 'Dribble practice',
+        name: 'dribble practice',
         duration: '1 Hrs 30 Min',
-        date: new Date('November 28, 2019'),
+        date: new Date('November 20, 2019'),
         volume: '18000'
       },
       {
         workoutId: 5,
-        name: 'Shoot around',
+        name: 'shoot around',
         duration: '1 Hrs 30 Min',
-        date: new Date('November 29, 2019'),
+        date: new Date('November 18, 2019'),
         volume: '23000'
       },
       {
         workoutId: 6,
-        name: 'Dribble practice',
+        name: 'dribble practice',
         duration: '1 Hrs 30 Min',
-        date: new Date('November 30, 2019'),
+        date: new Date('November 15, 2019'),
         volume: '24000'
       }
     ]
   },
   {
-    id: 2,
+    id: 3,
     name: 'Jazmine Garcia',
     username: 'JazzyPoo',
     password: '123123',
@@ -260,44 +250,44 @@ const users = [
     workout: [
       {
         workoutId: 1,
-        name: 'Leg raises',
+        name: 'leg raises',
         duration: '1 Hrs 30 Min',
-        date: new Date('December 1, 2019'),
+        date: new Date('December 5, 2019'),
         volume: '20000'
       },
       {
         workoutId: 2,
-        name: 'Squats',
+        name: 'squats',
         duration: '1 Hrs 30 Min',
-        date: new Date('December 2, 2019'),
+        date: new Date('December 1, 2019'),
         volume: '21000'
       },
       {
         workoutId: 3,
-        name: 'Leg raises',
+        name: 'leg raises',
         duration: '1 Hrs 30 Min',
-        date: new Date('December 3, 2019'),
+        date: new Date('November 22, 2019'),
         volume: '22500'
       },
       {
         workoutId: 4,
-        name: 'Squats',
+        name: 'squats',
         duration: '1 Hrs 30 Min',
-        date: new Date('December 4, 2019'),
+        date: new Date('November 20, 2019'),
         volume: '18000'
       },
       {
         workoutId: 5,
-        name: 'Leg raises',
+        name: 'leg raises',
         duration: '1 Hrs 30 Min',
-        date: new Date('December 5, 2019'),
+        date: new Date('November 16, 2019'),
         volume: '23000'
       },
       {
         workoutId: 6,
-        name: 'Squats',
+        name: 'squats',
         duration: '1 Hrs 30 Min',
-        date: new Date('December 6, 2019'),
+        date: new Date('November 14, 2019'),
         volume: '24000'
       }
     ]
