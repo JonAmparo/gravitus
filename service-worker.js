@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/gravitus/precache-manifest.341b3b27cc445c3d60033420427a594b.js"
+  "/gravitus/precache-manifest.8357f1c56704c8a5e21a033d38bbe4db.js"
 );
 
 self.addEventListener('message', (event) => {

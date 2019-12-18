@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/gravitus/static/css/main.2500cdaa.chunk.css",
-    "main.js": "/gravitus/static/js/main.01a94fba.chunk.js",
-    "main.js.map": "/gravitus/static/js/main.01a94fba.chunk.js.map",
-    "runtime-main.js": "/gravitus/static/js/runtime-main.10458df1.js",
-    "runtime-main.js.map": "/gravitus/static/js/runtime-main.10458df1.js.map",
+    "main.css": "/gravitus/static/css/main.f6b198af.chunk.css",
+    "main.js": "/gravitus/static/js/main.97e76a4c.chunk.js",
+    "main.js.map": "/gravitus/static/js/main.97e76a4c.chunk.js.map",
+    "runtime-main.js": "/gravitus/static/js/runtime-main.06237cee.js",
+    "runtime-main.js.map": "/gravitus/static/js/runtime-main.06237cee.js.map",
     "static/css/2.9d10ed23.chunk.css": "/gravitus/static/css/2.9d10ed23.chunk.css",
-    "static/js/2.0b3f8c52.chunk.js": "/gravitus/static/js/2.0b3f8c52.chunk.js",
-    "static/js/2.0b3f8c52.chunk.js.map": "/gravitus/static/js/2.0b3f8c52.chunk.js.map",
+    "static/js/2.80bd5264.chunk.js": "/gravitus/static/js/2.80bd5264.chunk.js",
+    "static/js/2.80bd5264.chunk.js.map": "/gravitus/static/js/2.80bd5264.chunk.js.map",
     "index.html": "/gravitus/index.html",
-    "precache-manifest.341b3b27cc445c3d60033420427a594b.js": "/gravitus/precache-manifest.341b3b27cc445c3d60033420427a594b.js",
+    "precache-manifest.8357f1c56704c8a5e21a033d38bbe4db.js": "/gravitus/precache-manifest.8357f1c56704c8a5e21a033d38bbe4db.js",
     "service-worker.js": "/gravitus/service-worker.js",
     "static/css/2.9d10ed23.chunk.css.map": "/gravitus/static/css/2.9d10ed23.chunk.css.map",
-    "static/css/main.2500cdaa.chunk.css.map": "/gravitus/static/css/main.2500cdaa.chunk.css.map",
+    "static/css/main.f6b198af.chunk.css.map": "/gravitus/static/css/main.f6b198af.chunk.css.map",
+    "static/js/2.80bd5264.chunk.js.LICENSE": "/gravitus/static/js/2.80bd5264.chunk.js.LICENSE",
     "static/media/angellist.svg": "/gravitus/static/media/angellist.280dd548.svg",
     "static/media/article1.jpg": "/gravitus/static/media/article1.a7adce87.jpg",
     "static/media/article2.jpg": "/gravitus/static/media/article2.d8725261.jpg",
@@ -33,10 +34,10 @@
     "static/media/twitter.svg": "/gravitus/static/media/twitter.0729c42a.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.10458df1.js",
+    "static/js/runtime-main.06237cee.js",
     "static/css/2.9d10ed23.chunk.css",
-    "static/js/2.0b3f8c52.chunk.js",
-    "static/css/main.2500cdaa.chunk.css",
-    "static/js/main.01a94fba.chunk.js"
+    "static/js/2.80bd5264.chunk.js",
+    "static/css/main.f6b198af.chunk.css",
+    "static/js/main.97e76a4c.chunk.js"
   ]
 }
