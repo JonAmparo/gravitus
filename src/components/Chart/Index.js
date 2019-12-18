@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import classes from './Dashboard.module.css';
+import classes from './Index.module.css';
 import LineGraph from './LineGraph';
 import chartIcon from '../../assets/images/chart-icon.svg';
 import {
@@ -11,7 +11,7 @@ import {
   quarterLabels,
   weightData,
   weightQuarterData
-} from '../../chartData';
+} from '../../assets/data/chartData';
 
 export default class Dashboard extends Component {
   state = {
@@ -27,9 +27,7 @@ export default class Dashboard extends Component {
 
     const newData = isAnnual ? caloriesData : caloriesQuarterData;
     const newLabels = isAnnual ? yearLabels : quarterLabels;
-    const newAverage = isAnnual
-      ? volumeAverageData
-      : volumeAverageQuarterData;
+    const newAverage = isAnnual ? volumeAverageData : volumeAverageQuarterData;
     const newVisits = isAnnual ? weightData : weightQuarterData;
 
     this.setState({

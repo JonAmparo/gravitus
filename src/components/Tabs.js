@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import glamorous from 'glamorous';
+// import glamorous from 'glamorous';
+import styled from '@emotion/styled';
 import Tab from './Tab';
 
-const ListTabs = glamorous.ul({
+const ListTabs = styled.ul({
   paddingLeft: 0,
   listStyle: 'none',
   margin: 0
 });
 
-const TabTitleItem = glamorous.li(
+const TabTitleItem = styled.li(
   {
     display: 'inline-block',
     paddingRight: 5,
@@ -32,7 +33,7 @@ const TabTitleItem = glamorous.li(
   }
 );
 
-const ActiveTabBorder = glamorous.div(
+const ActiveTabBorder = styled.div(
   {
     height: 4,
     backgroundColor: '#0088dd',
@@ -51,19 +52,19 @@ const ActiveTabBorder = glamorous.div(
   }
 );
 
-const TabAnchorItem = glamorous.a({
+const TabAnchorItem = styled.a({
   textTransform: 'capitalize',
   color: '#000000',
   fontWeight: 600
 });
 
-const TabsContainer = glamorous.div({
+const TabsContainer = styled.div({
   position: 'relative',
   borderBottom: '1px solid #dfdfdf'
 });
 
-const ReactTabs = glamorous.div({
-  position: 'realative'
+const ReactTabs = styled.div({
+  position: 'relative'
 });
 
 // function Tabs(props) {

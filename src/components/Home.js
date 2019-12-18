@@ -1,6 +1,6 @@
 import React from 'react';
 import UserWorkout from '../components/UserWorkout';
-import { users } from '../dummy-data';
+import { users } from '../assets/data/dummy-data';
 
 export default function Home() {
   return (

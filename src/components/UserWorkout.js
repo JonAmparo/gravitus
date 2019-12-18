@@ -1,5 +1,6 @@
 import React from 'react';
 import avatar from '../assets/images/bbcom.jpg';
+import { FaThumbsUp } from 'react-icons/fa';
 
 function UserWorkout({
   id,
@@ -29,7 +30,7 @@ function UserWorkout({
         {thumbsup ? (
           <div className='ml-auto'>
             <a href='#fist' className="text-secondary">
-              <i className='h1 fas fa-fist-raised'></i>
+              <FaThumbsUp className="h3" />
             </a>
           </div>
         ) : null}

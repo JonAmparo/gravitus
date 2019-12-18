@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Loading from './Loading';
-import { getArticles } from '../api';
+import { getArticles } from '../api/api.js';
 
 function Articles(props) {
   const [articles, setArticles] = React.useState(null);

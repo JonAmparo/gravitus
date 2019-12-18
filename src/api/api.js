@@ -1,4 +1,4 @@
-import { users, exercises, articleInfo } from './dummy-data';
+import { users, exercises, articleInfo } from '../assets/data/dummy-data';
 
 let cachedProfiles = {};
 let cachedExercises = null;
@@ -19,7 +19,7 @@ export function getExercises() {
   return new Promise(res => {
     if (cachedExercises === null) {
       cachedExercises = exercises;
-      return setTimeout(() => res(cachedExercises), 800);
+      return setTimeout(() => res(cachedExercises), 400);
     }
 
     return res(cachedExercises);
@@ -30,7 +30,7 @@ export function getArticles() {
   return new Promise(res => {
     if (cachedArticles === null) {
       cachedArticles = articleInfo;
-      return setTimeout(() => res(cachedArticles), 800);
+      return setTimeout(() => res(cachedArticles), 400);
     }
 
     return res(cachedArticles);

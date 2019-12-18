@@ -3,6 +3,8 @@ import Profile from './Profile';
 import UserWorkout from './UserWorkout';
 import FriendsList from './FriendsList';
 import Loading from './Loading';
+import Button from './Button';
+
 // import { users } from '../dummy-data';
 
 function Profiles(props) {
@@ -52,9 +54,11 @@ function Profiles(props) {
                     ))}
                 </div>
                 <div>
-                  <button className='btn btn-outline-secondary'>
-                    Edit Profile
-                  </button>
+                  <Button
+                    type='button'
+                    label='Edit Profile'
+                    className='btn- btn-global'
+                  />
                 </div>
               </div>
 

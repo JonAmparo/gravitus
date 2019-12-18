@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import SOCIAL_PROFILES from '../socialProfiles';
+import SOCIAL_PROFILES from '../assets/data/socialProfiles';
 
 const FooterColumn = styled.div`
   @media (max-width: 768px) {

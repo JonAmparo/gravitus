@@ -1,11 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { getExercises } from '../api';
+import { getExercises } from '../api/api.js';
 import Loading from './Loading';
 import CheckBox from './CheckBox';
-import glamorous from 'glamorous';
+// import glamorous from 'glamorous';
+import styled from '@emotion/styled';
 
-const Images = glamorous.img({
+// const Images = glamorous.img({
+//   width: '100%',
+//   height: '250px'
+// });
+const Images = styled.img({
   width: '100%',
   height: '250px'
 });
@@ -158,9 +163,9 @@ export default function Exercises(props) {
                     state: { exercises }
                   }}
                 >
-                  <h4 className="text-white">{exercises.name}</h4>
+                  <h4 className='text-white'>{exercises.name}</h4>
                 </Link>
-                <p className="text-secondary">{exercises.description}</p>
+                <p className='text-secondary'>{exercises.description}</p>
                 <Link
                   to={{
                     pathname: `${match.url}/${exercises.link}`,

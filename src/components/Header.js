@@ -92,7 +92,7 @@ function Header(props) {
                 Profiles
               </Link>
             </NavList>
-            {/* <NavList className='nav-item'>
+            <NavList className='nav-item'>
               <Link
                 to={'/login'}
                 className={
@@ -103,7 +103,7 @@ function Header(props) {
               >
                 Login
               </Link>
-            </NavList> */}
+            </NavList>
           </ul>
         </div>
       </Nav>

@@ -3,13 +3,15 @@ import { IoIosInformationCircleOutline } from 'react-icons/io';
 import { FiUser, FiUsers } from 'react-icons/fi';
 import { AiOutlineTrophy } from 'react-icons/ai';
 import Tabs from './Tabs';
-import glamorous from 'glamorous';
+// import styled from '@emotion/styled';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Dashboard from './Chart/Index';
 
-const images = {};
+
+
+// const images = {};
 
 function ExercisesPage(props) {
   const { exercises } = props.location.state;
@@ -24,25 +26,17 @@ function ExercisesPage(props) {
           }}
         >
           <Tabs.Tab id='tab1' title={<IoIosInformationCircleOutline />}>
-            <glamorous.Div padding={20}>
-              <ExerciseInfo exercises={exercises} />
-            </glamorous.Div>
+            <ExerciseInfo exercises={exercises} />
           </Tabs.Tab>
           <Tabs.Tab id='tab2' title={<FiUser />}>
-            <glamorous.Div padding={20}>
-              <Dashboard />
-            </glamorous.Div>
+            <Dashboard />
           </Tabs.Tab>
           <Tabs.Tab id='tab3' title={<FiUsers />}>
-            <glamorous.Div padding={20}>
-              <p>Placeholder #3</p>
-              <Exercise3 exercises={exercises} />
-            </glamorous.Div>
+            <p>Placeholder #3</p>
+            <Exercise3 exercises={exercises} />
           </Tabs.Tab>
           <Tabs.Tab id='tab4' title={<AiOutlineTrophy />}>
-            <glamorous.Div padding={20}>
-              <p>Placeholder #4</p>
-            </glamorous.Div>
+            <p>Placeholder #4</p>
           </Tabs.Tab>
         </Tabs>
       </div>
@@ -63,24 +57,45 @@ function ExerciseInfo({ exercises }) {
     <div className='text-left'>
       <Slider {...settings} className='my-5'>
         <div>
-          <img className='img-fluid' src={exercises.image} />
+          <img
+            className='img-fluid'
+            src={exercises.image}
+            alt={exercises.name + 'exercise'}
+          />
         </div>
         <div>
-          <img className='img-fluid' src={exercises.image} />
+          <img
+            className='img-fluid'
+            src={exercises.image}
+            alt={exercises.name + 'exercise'}
+          />
         </div>
         <div>
-          <img className='img-fluid' src={exercises.image} />
+          <img
+            className='img-fluid'
+            src={exercises.image}
+            alt={exercises.name + 'exercise'}
+          />
         </div>
         <div>
-          <img className='img-fluid' src={exercises.image} />
+          <img
+            className='img-fluid'
+            src={exercises.image}
+            alt={exercises.name + 'exercise'}
+          />
         </div>
         <div>
-          <img className='img-fluid' src={exercises.image} />
+          <img
+            className='img-fluid'
+            src={exercises.image}
+            alt={exercises.name + 'exercise'}
+          />
         </div>
         <div>
           <img
             className='img-fluid'
             src='https://picsum.photos/id/1079/4496/3000'
+            alt={exercises.name + 'exercise'}
           />
         </div>
       </Slider>

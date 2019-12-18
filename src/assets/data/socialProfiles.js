@@ -1,8 +1,8 @@
-import linkedin from './assets/images/linkedin.svg';
-import twitter from './assets/images/twitter.svg';
-import facebook from './assets/images/facebook.svg';
-import angellist from './assets/images/angellist.svg';
-import instagram from './assets/images/instagram.svg';
+import linkedin from '../images/linkedin.svg';
+import twitter from '../images/twitter.svg';
+import facebook from '../images/facebook.svg';
+import angellist from '../images/angellist.svg';
+import instagram from '../images/instagram.svg';
 
 const SOCIAL_PROFILES = [
   {

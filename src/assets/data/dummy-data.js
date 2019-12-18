@@ -1,15 +1,15 @@
 // import slug from 'slug';
-import benchpress from './assets/images/benchpress.jpg';
-import squat from './assets/images/squat.jpg';
-import deadlift from './assets/images/deadlift.jpg';
-import overheadpress from './assets/images/overheadpress.jpg';
-import romaniandeadlift from './assets/images/romaniandeadlift.jpg';
-import stairmaster from './assets/images/stairmaster.jpg';
+import benchpress from '../images/benchpress.jpg';
+import squat from '../images/squat.jpg';
+import deadlift from '../images/deadlift.jpg';
+import overheadpress from '../images/overheadpress.jpg';
+import romaniandeadlift from '../images/romaniandeadlift.jpg';
+import stairmaster from '../images/stairmaster.jpg';
 
 // ArticleInfo Imports
-import article1 from './assets/images/article1.jpg';
-import article2 from './assets/images/article2.jpg';
-import article4 from './assets/images/article4.jpg';
+import article1 from '../images/article1.jpg';
+import article2 from '../images/article2.jpg';
+import article4 from '../images/article4.jpg';
 
 const exercises = [
   {

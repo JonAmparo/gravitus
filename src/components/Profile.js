@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { getProfile } from '../api';
+import { getProfile } from '../api/api.js';
 
 export default function Profile(props) {
   const [profile, setProfile] = React.useState(null);
