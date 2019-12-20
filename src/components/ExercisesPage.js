@@ -9,8 +9,6 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Dashboard from './Chart/Index';
 
-
-
 // const images = {};
 
 function ExercisesPage(props) {
@@ -66,7 +64,7 @@ function ExerciseInfo({ exercises }) {
         <div>
           <img
             className='img-fluid'
-            src={exercises.image}
+            src='https://picsum.photos/id/1079/4496/3000'
             alt={exercises.name + 'exercise'}
           />
         </div>
@@ -99,12 +97,6 @@ function ExerciseInfo({ exercises }) {
           />
         </div>
       </Slider>
-      {/* <img
-        className=''
-        style={{ width: '100%', height: '400px' }}
-        src={exercises.image}
-        alt={exercises.name}
-      /> */}
       <h4>Instructions:</h4>
       <p>{exercises.description}</p>
       <h4>Tips:</h4>

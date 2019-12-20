@@ -3,13 +3,8 @@ import { Link } from 'react-router-dom';
 import { getExercises } from '../api/api.js';
 import Loading from './Loading';
 import CheckBox from './CheckBox';
-// import glamorous from 'glamorous';
 import styled from '@emotion/styled';
 
-// const Images = glamorous.img({
-//   width: '100%',
-//   height: '250px'
-// });
 const Images = styled.img({
   width: '100%',
   height: '250px'
@@ -49,8 +44,6 @@ function useMuscle() {
         muscleArr.push(elementName[i].value);
       }
     }
-    // console.log('muscleArr:', muscleArr);
-    // console.log('muscleGroup:', muscleGroup);
 
     if (muscleArr.length <= 0) {
       return getExercises().then(exercises => {
@@ -58,15 +51,6 @@ function useMuscle() {
       });
     } else if (muscleArr.length > 0) {
       getExercises().then(setExercises(muscleGroup));
-      // console.log('cachedExercises #1:', cachedExercises);
-      // cachedExercises.map(exercise => {
-      //   for (let k in exercise) {
-      //     if (exercise[k] === event.target.value) {
-      //       // console.log('WORKING!!!: ', exercise[k]);
-      //       // console.log('exercises:', exercise);
-      //     }
-      //   }
-      // });
     }
   };
 

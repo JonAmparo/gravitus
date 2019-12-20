@@ -8,6 +8,7 @@
     "@emotion/styled": "^10.0.23",
     "chart.js": "^2.9.0",
     "chartjs-plugin-lineheight-annotation": "^0.3.5",
+    "core-js": "^3.6.0",
     "font-awesome": "^4.7.0",
     "gh-pages": "^2.1.1",
     "jquery": "^3.4.1",
@@ -31,32 +32,41 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "webpack-dev-server",
+    "build": "webpack --mode development",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "eslint-plugin-react-hooks": "^2.3.0"
-  },
-  "plugins": [
-    "react-hooks"
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react"
   ],
+  "plugins": [
+    [
+      "react-hooks",
+      "@babel/plugin-proposal-class-properties"
+    ]
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-react": "^7.7.4",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "file-loader": "^5.0.2",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.2",
+    "webpack": "^4.41.3",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  },
   "rules": {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn"

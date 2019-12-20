@@ -8,9 +8,6 @@ export default function CheckBox({
   id,
   name = 'muscle'
 }) {
-  // const [checked, setChecked] = React.useState(false);
-  // console.log('props:', props);
-
   return (
     <li>
       <input

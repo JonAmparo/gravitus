@@ -1,5 +1,4 @@
 import React from 'react';
-// import glamorous from 'glamorous';
 import styled from '@emotion/styled';
 
 const Content = styled.section({
@@ -7,7 +6,6 @@ const Content = styled.section({
   minHeight: '100vh',
   backgroundColor: '#22262a'
 });
-
 
 function Wrapper(props) {
   return (

@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <React.Fragment>
       <h1 className='text-center'>Home Page</h1>
-      <div className='my-2'>
+      <div className='row'>
         <ul>
           {users.map(item =>
             // If id = 1, then show user id with 1
