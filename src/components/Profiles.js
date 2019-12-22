@@ -63,7 +63,7 @@ function Profiles(props) {
               </div>
 
               <React.Fragment>
-                <h5 className='separator text-secondary '>Recent workouts</h5>
+                <h5 className='separatorLine text-secondary '>Recent workouts</h5>
                 {profile.id === 2
                   ? // If id = 1, then show user id with 1
                     profile.workout
@@ -92,7 +92,7 @@ function Profiles(props) {
                   : null}
               </React.Fragment>
               <React.Fragment>
-                <h5 className='separator text-secondary '>Friends</h5>
+                <h5 className='separatorLine text-secondary '>Friends</h5>
                 <div className='my-2'>
                   <FriendsList
                     key={profile.id + profile.name}

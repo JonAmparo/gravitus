@@ -34,7 +34,7 @@ function Articles(props) {
   return (
     <React.Fragment>
       <h1 className='text-center'>Articles</h1>
-      <h6 className='separator'>LATEST ARTICLES</h6>
+      <h6 className='separatorLine'>LATEST ARTICLES</h6>
       <div className='row'>
         {articles.map((articles, index) => (
           <div key={articles.title + index} className='col-lg-6'>

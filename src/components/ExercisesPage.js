@@ -5,8 +5,10 @@ import { AiOutlineTrophy } from 'react-icons/ai';
 import Tabs from './Tabs';
 // import styled from '@emotion/styled';
 import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+// import 'slick-carousel/slick/slick.css';
+// import 'slick-carousel/slick/slick-theme.css';
+// import '../assets/styles/_slick.scss';
+// import '../assets/styles/_slick-theme.scss';
 import Dashboard from './Chart/Index';
 
 // const images = {};

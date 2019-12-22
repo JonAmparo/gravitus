@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import classes from './Index.module.css';
+import classes from './IndexChart.module.css';
 import LineGraph from './LineGraph';
 import chartIcon from '../../assets/images/chart-icon.svg';
 import {

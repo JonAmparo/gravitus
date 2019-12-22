@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import './index.scss';
+import './style.scss';
 
 // Components
 import Header from './components/Header';
@@ -21,7 +21,8 @@ import Profiles from './components/Profiles';
 
 function App() {
   return (
-    <Router basename={'/gravitus'}>
+    <Router>
+    {/* <Router basename={'/gravitus'}> */}
       <Header />
       <Wrapper>
         <Switch>

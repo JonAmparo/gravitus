@@ -2,7 +2,7 @@ import React from 'react';
 import FormInput from './FormInput';
 import Button from './Button';
 import './FormInput.scss';
-import '../index.scss';
+import '../style.scss';
 
 class LoginPage extends React.Component {
   state = {
