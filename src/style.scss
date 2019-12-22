@@ -2,6 +2,8 @@ $primary: teal;
 $danger: purple;
 
 @import '~bootstrap/scss/bootstrap';
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";
 
 // Site Colors
 $darkslategray: #22262a;
@@ -85,7 +87,7 @@ li {
   align-items: center;
   text-align: center;
 
-  &:after {
+  &::after {
     content: '';
     flex: 1;
     border-bottom: 2px solid rgb(131, 131, 131);

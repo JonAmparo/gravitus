@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Chart } from 'react-chartjs-2';
 import 'chartjs-plugin-lineheight-annotation';
-import classes from './LineGraph.module.css';
+import './LineGraph.module.css';
+
 let myLineChart;
 
 class LineGraph extends Component {
@@ -17,12 +18,7 @@ class LineGraph extends Component {
 
   buildChart = () => {
     const myChartRef = this.chartRef.current.getContext('2d');
-    const {
-      data,
-      average,
-      labels,
-      visits
-    } = this.props;
+    const { data, average, labels, visits } = this.props;
 
     if (typeof myLineChart !== 'undefined') myLineChart.destroy();
 
@@ -184,7 +180,8 @@ class LineGraph extends Component {
 
   render() {
     return (
-      <div className={classes.graphContainer}>
+      // <div className='graphContainer'>
+      <div className='graphContainer'>
         <canvas id='myChart' ref={this.chartRef} />
       </div>
     );

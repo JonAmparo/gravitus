@@ -1,6 +1,3 @@
-const path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-
 module.exports = {
   entry: {
     main: './src/index.js',
@@ -19,10 +16,10 @@ module.exports = {
       {
         test: /\.(eot|woff|woff2|ttf|png|svg|jpg|jpeg|gif|ico)$/,
         use: {
-          // loader: 'file-loader',
-          loader: 'url-loader?limit=30000&name=[name]-[hash].[ext]',
+          loader: 'file-loader',
+          // loader: 'url-loader?limit=30000&name=[name]-[hash].[ext]',
           options: {
-            name: '[name].[hash].[ext]', //
+            name: '[name]-[hash].[ext]', //
             outputPath: 'assets/images' //
           }
         }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import classes from './IndexChart.module.css';
+// import classes from './IndexChart.module.css';
+import './IndexChart.module.css';
 import LineGraph from './LineGraph';
 import chartIcon from '../../assets/images/chart-icon.svg';
 import {
@@ -42,13 +43,13 @@ export default class Dashboard extends Component {
     const { data, average, labels, visits } = this.state;
 
     return (
-      <div className={classes.container}>
+      <div className='chartContainer'>
         <header>
           <img src={chartIcon} alt='bar chart icon' className='iconchart' />
           <h1>Dashboard</h1>
         </header>
 
-        <div className={classes.buttonContainer}>
+        <div className='buttonContainer'>
           <button value='annual' onClick={this.handleButtonClick}>
             Annual
           </button>

@@ -22,7 +22,7 @@ import Profiles from './components/Profiles';
 function App() {
   return (
     <Router>
-    {/* <Router basename={'/gravitus'}> */}
+      {/* <Router basename={'/gravitus'}> */}
       <Header />
       <Wrapper>
         <Switch>

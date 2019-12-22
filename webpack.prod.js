@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = merge(common, {
   mode: 'production',
@@ -19,11 +19,11 @@ module.exports = merge(common, {
       new TerserPlugin(),
       new HtmlWebpackPlugin({
         template: './src/index.html',
-        // minify: {
-        //   removeAttributeQuotes: true,
-        //   collapseWhitespace: true,
-        //   removeComments: true
-        // }
+        minify: {
+          removeAttributeQuotes: true,
+          collapseWhitespace: true,
+          removeComments: true
+        }
       })
     ]
   },
@@ -33,10 +33,6 @@ module.exports = merge(common, {
   ],
   module: {
     rules: [
-      // {
-      //   test: /\.css$/i,
-      //   use: ['style-loader', 'css-loader']
-      // },
       {
         test: /\.(s[ac]ss|css)$/i,
         use: [

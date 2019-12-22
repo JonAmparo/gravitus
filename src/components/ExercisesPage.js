@@ -5,13 +5,12 @@ import { AiOutlineTrophy } from 'react-icons/ai';
 import Tabs from './Tabs';
 // import styled from '@emotion/styled';
 import Slider from 'react-slick';
-// import 'slick-carousel/slick/slick.css';
-// import 'slick-carousel/slick/slick-theme.css';
-// import '../assets/styles/_slick.scss';
-// import '../assets/styles/_slick-theme.scss';
 import Dashboard from './Chart/Index';
 
-// const images = {};
+// const Images = styled.img`
+//   height: 125px;
+//   width: 125px;
+// `;
 
 function ExercisesPage(props) {
   const { exercises } = props.location.state;
@@ -77,7 +76,7 @@ function ExerciseInfo({ exercises }) {
             alt={exercises.name + 'exercise'}
           />
         </div>
-        <div>
+          <div>
           <img
             className='img-fluid'
             src={exercises.image}
