@@ -17,7 +17,10 @@ import Exercises from './components/Exercises';
 import ExercisesPage from './components/ExercisesPage';
 
 import LoginPage from './components/LoginPage';
+import Register from './components/Register';
+
 import Profiles from './components/Profiles';
+import ProfilesEdit from './components/ProfilesEdit';
 
 function App() {
   return (
@@ -32,7 +35,10 @@ function App() {
           <Route exact path='/exercises' component={Exercises} />
           <Route exact path='/exercises/:exId' component={ExercisesPage} />
           <Route exact path='/profiles' component={Profiles} />
+          <Route exact path='/profiles/profilesEdit' component={ProfilesEdit} />
           <Route exact path='/login' component={LoginPage} />
+          <Route exact path='/register' component={Register} />
+
           <Route render={() => <h1>404</h1>} />
         </Switch>
       </Wrapper>

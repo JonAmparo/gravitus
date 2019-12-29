@@ -3,20 +3,25 @@ import Profile from './Profile';
 import UserWorkout from './UserWorkout';
 import FriendsList from './FriendsList';
 import Loading from './Loading';
-import Button from './Button';
-
-// import { users } from '../dummy-data';
+// import Button from './Button';
+import { Link } from 'react-router-dom';
 
 function Profiles(props) {
-  // console.log('props:', props)
+  console.log('props:', props.match.url);
   const [id, setId] = React.useState(0);
-  // console.log('id:', typeof id);
-  // console.log('props Profiles: ', props);
 
   React.useEffect(() => {
     setId(() => null); // not needed
     setId(2); // Change for different profiles
   }, []);
+
+  const editName = () => {};
+
+  const editProfile = () => {
+    if (id) {
+      console.log('Button was pressed2');
+    }
+  };
 
   return (
     <React.Fragment>
@@ -53,17 +58,27 @@ function Profiles(props) {
                       </React.Fragment>
                     ))}
                 </div>
-                <div>
-                  <Button
+
+                <Link
+                  to={`${props.match.url}/ProfilesEdit`}
+                  className='btn btn-outline-light'
+                >
+                  Edit Profile
+                </Link>
+                {/* <Button
+                    // as={Link}
+                    to={`${props.match.url}/ProfilesEdit`}
                     type='button'
                     label='Edit Profile'
                     className='btn- btn-global'
-                  />
-                </div>
+                    onClick={editProfile}
+                  />*/}
               </div>
 
               <React.Fragment>
-                <h5 className='separatorLine text-secondary '>Recent workouts</h5>
+                <h5 className='separatorLine text-secondary '>
+                  Recent workouts
+                </h5>
                 {profile.id === 2
                   ? // If id = 1, then show user id with 1
                     profile.workout

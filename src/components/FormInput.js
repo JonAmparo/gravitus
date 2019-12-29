@@ -4,16 +4,17 @@ import $ from 'jquery';
 // import styled from '@emotion/styled';
 
 export default function FormInput({
-  name = 'text',
+  name = 'name',
   type,
   placeholder,
   onChange,
-  labelClassName = '',
-  className = '',
+  labelClassName = 'form-label text-secondary',
+  inputClassName = 'input form-control',
   value,
   error,
   children,
   label,
+  required,
   ...props
 }) {
   React.useEffect(() => {
@@ -40,7 +41,7 @@ export default function FormInput({
   });
 
   return (
-    <div>
+    <div className='form-group-minimal'>
       <label htmlFor={name} className={labelClassName}>
         {label}
       </label>
@@ -51,8 +52,9 @@ export default function FormInput({
         placeholder={placeholder}
         onChange={onChange}
         value={value}
-        className={className}
+        className={inputClassName}
         style={error && { borderBottom: 'solid 1px red' }}
+        required={required}
       />
       {error && <p>{error}</p>}
     </div>
@@ -61,8 +63,8 @@ export default function FormInput({
 
 FormInput.propTypes = {
   name: PropTypes.string.isRequired,
-  placeholder: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(['text', 'number', 'password']),
+  placeholder: PropTypes.string,
+  type: PropTypes.oneOf(['text', 'number', 'password', 'email', 'file']),
   className: PropTypes.string,
   value: PropTypes.any,
   onChange: PropTypes.func.isRequired

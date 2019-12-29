@@ -93,7 +93,7 @@ function ExerciseInfo({ exercises }) {
         <div>
           <img
             className='img-fluid'
-            src='https://picsum.photos/id/1079/4496/3000'
+            src='https://picsum.photos/id/1083/4496/3000'
             alt={exercises.name + 'exercise'}
           />
         </div>

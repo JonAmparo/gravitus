@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import FormInput from './FormInput';
 import Button from './Button';
 import './FormInput.scss';
-import '../style.scss';
+import { Link } from 'react-router-dom';
+import Register from './Register';
 
 class LoginPage extends React.Component {
   state = {
@@ -41,6 +42,8 @@ class LoginPage extends React.Component {
     });
   };
 
+  onButton = () => {};
+
   render() {
     const {
       submitted,
@@ -56,7 +59,7 @@ class LoginPage extends React.Component {
             <div className='row justify-content-center mt-5'>
               <div className='col-md-8 border border-secondary rounded p-4'>
                 <h1 className='text-center'>Login!</h1>
-                <div className='form-group-minimal'>
+                <form>
                   <FormInput
                     label='Username'
                     labelClassName='form-label text-secondary'
@@ -64,13 +67,10 @@ class LoginPage extends React.Component {
                     type='text'
                     value={username}
                     onChange={this.handleChange}
-                    // placeholder='Enter username...'
                     error={errors.username}
                     required
-                    className='input form-control'
                   />
-                </div>
-                <div className='form-group-minimal'>
+
                   <FormInput
                     label='Password'
                     labelClassName='form-label text-secondary'
@@ -78,9 +78,7 @@ class LoginPage extends React.Component {
                     type='password'
                     value={password}
                     onChange={this.handleChange}
-                    // placeholder='Enter password...'
                     error={errors.password}
-                    className='input form-control'
                     required
                   />
 
@@ -88,17 +86,25 @@ class LoginPage extends React.Component {
                     type='submit'
                     label='Submit'
                     className='btn- btn-global mt-5'
-                    handleClick={this.onSubmit}
+                    onClick={this.onSubmit}
                   />
-                </div>
+                </form>
               </div>
               <div className='col-md-8 text-secondary mt-5'>
-                <p>OR, USE FACEBOOK</p>
+                {/* <p>OR, USE FACEBOOK</p>
                 <Button
                   type='submit'
                   label='Sign in with Facebook'
                   className='btn- btn-global'
-                />
+                  onClick={this.onButton}
+                /> */}
+                <p>
+                  Don't have an account?
+                  <Link to={'/register'} className='text-primary'>
+                    {' '}
+                    Sign up today!
+                  </Link>
+                </p>
               </div>
             </div>
           </React.Fragment>
@@ -107,6 +113,103 @@ class LoginPage extends React.Component {
     );
   }
 }
+
+// const LoginPage = props => {
+//   const [users, setUsers] = useState({ user: { username: '', password: '' } });
+//   const [error, setError] = useState({});
+//   const [submitted, setSubmitted] = useState(false);
+
+//   handleChange = event => {
+//     const { user } = users;
+//     user[event.target.name] = event.target.value;
+//     setUsers({ user });
+//   };
+
+//   onSubmit = () => {
+//     const {
+//       user: { username, password }
+//     } = users;
+//     let err = {};
+
+//     if (!username) {
+//       err.username = 'Enter your username!';
+//     }
+
+//     if (password.length < 4) {
+//       err.password = 'Password must be at least 4 characters!';
+//     }
+
+//     this.setState({ errors: err }, () => {
+//       if (Object.getOwnPropertyNames(this.state.errors).length === 0) {
+//         this.setState({ submitted: true });
+//       }
+//     });
+//   };
+
+//   onButton = () => {};
+
+//   return (
+//     <React.Fragment>
+//       {submitted ? (
+//         <p>Welcome onboard, {username}!</p>
+//       ) : (
+//         <React.Fragment>
+//           <div className='row justify-content-center mt-5'>
+//             <div className='col-md-8 border border-secondary rounded p-4'>
+//               <h1 className='text-center'>Login!</h1>
+//               <form>
+//                 {/* <FormInput
+//                   label='Username'
+//                   labelClassName='form-label text-secondary'
+//                   name='username'
+//                   type='text'
+//                   value={username}
+//                   onChange={this.handleChange}
+//                   error={errors.username}
+//                   required
+//                 />
+
+//                 <FormInput
+//                   label='Password'
+//                   labelClassName='form-label text-secondary'
+//                   name='password'
+//                   type='password'
+//                   value={password}
+//                   onChange={this.handleChange}
+//                   error={errors.password}
+//                   required
+//                 />
+
+//                 <Button
+//                   type='submit'
+//                   label='Submit'
+//                   className='btn- btn-global mt-5'
+//                   onClick={this.onSubmit}
+//                 /> */}
+//               </form>
+//             </div>
+//             <div className='col-md-8 text-secondary mt-5'>
+//               {/* <p>OR, USE FACEBOOK</p>
+//                 <Button
+//                   type='submit'
+//                   label='Sign in with Facebook'
+//                   className='btn- btn-global'
+//                   onClick={this.onButton}
+//                 /> */}
+//               <p>
+//                 Don't have an account?
+//                 <Link to={'/register'} className='text-primary'>
+//                   {' '}
+//                   Sign up today!
+//                 </Link>
+//               </p>
+//             </div>
+//           </div>
+//         </React.Fragment>
+//       )}
+//     </React.Fragment>
+//   );
+// };
 
 // function loginReducer(state, action) {
 //   if (action.type === 'success') {

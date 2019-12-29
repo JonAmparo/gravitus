@@ -3,19 +3,11 @@ import { Link } from 'react-router-dom';
 import Loading from './Loading';
 import { getArticles } from '../api/api.js';
 import styled from '@emotion/styled';
-import { jsx, css } from '@emotion/core';
 
-const SeparatorLine = styled('h6')`
+const SeparatorLine = styled.h6`
   display: flex;
   align-items: center;
   text-align: right;
-  border-bottom: white;
-  color: cyan;
-  background-color: black;
-
-  &:hover {
-    color: pink;
-  }
 
   &:after {
     content: '';
@@ -24,38 +16,6 @@ const SeparatorLine = styled('h6')`
     margin-left: 0.45em;
   }
 `;
-
-// const SeparatorLine = styled.h6({
-//   display: 'flex',
-//   alignItems: 'center',
-//   textAlign: 'center',
-//   color: 'cyan'
-// });
-
-// const SeparatorLineAfter = css({
-//   ':hover,:focus': hotpink
-// });
-
-// const SeparatorLine = styled('h6')`
-//   display: flex;
-//   alignItems: center;
-//   textAlign: center;
-//   color: cyan;
-
-// `;
-
-// .separatorLine {
-// display: flex;
-// align-items: center;
-// text-align: center;
-
-// &:after {
-//   content: '';
-//   flex: 1;
-//   border-bottom: 2px solid rgb(131, 131, 131);
-//   margin-left: 0.45em;
-// }
-// }
 
 function Articles(props) {
   const [articles, setArticles] = React.useState(null);
@@ -104,7 +64,7 @@ function Articles(props) {
                 alt={articles.name}
                 style={{ width: '100%', height: '250px' }}
               />
-              <h4>{articles.title}</h4>
+              <h4 className="pt-2">{articles.title}</h4>
             </Link>
             <p className='text-muted'>
               {articles.date.toLocaleString('default', {
