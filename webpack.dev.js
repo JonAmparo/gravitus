@@ -7,7 +7,7 @@ module.exports = merge(common, {
   mode: 'development',
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.join(__dirname, 'dist'),
     publicPath: '/'
   },
   plugins: [
@@ -16,7 +16,31 @@ module.exports = merge(common, {
     })
   ],
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
+    contentBase: path.join(__dirname, 'dist'), //serve your static files from here
+    watchContentBase: true,
+    proxy: [
+      // allows redirect of requests to webpack-dev-server to another destination
+      {
+        context: ['/api', '/auth'], // can have multiple
+        target: 'http://localhost:8080', // server and port to redirect to
+        secure: false
+      }
+    ],
+    port: 3030, // port webpack-dev-server listens to, defaults to 8080
+    overlay: {
+      // Shows a full-screen overlay in the browser when there are compiler errors or warnings
+      warnings: false, // defaults to false
+      errors: false // defaults to false
+    }
+    // port: 3000,
+    // open: true
+    // proxy: {
+    //   '^/api*': {
+    //     target: 'http://localhost:3000/api',
+    //     secure: false
+    //   }
+    // }
   },
   module: {
     rules: [

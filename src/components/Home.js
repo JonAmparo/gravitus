@@ -1,5 +1,5 @@
 import React from 'react';
-import UserWorkout from '../components/UserWorkout';
+import UserWorkout from './UserWorkout';
 import { users } from '../assets/data/dummy-data';
 
 export default function Home() {

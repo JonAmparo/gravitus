@@ -1,26 +1,50 @@
 {
   "name": "gravitus",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "Gym application called Gravitus. Inspired by the mobile application named Gravitus. I'm trying to replicate the application, while I'm at it. I'm using it as a tool to further my understanding of React, Node.js, Webpack, Babel, MongoDB, Express, and Redux!",
+  "author": "Jonathan Amparo",
+  "license": "ISC",
   "private": true,
-  "homepage": "https://jonamparo.github.io/gravitus",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "webpack-dev-server --config webpack.dev.js && nodemon server/index.js",
+    "server": "nodemon server/index.js",
+    "client": "webpack --config webpack.dev.js --open",
+    "devv": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "webpack --config webpack.prod.js",
+    "test": "nodemon server/index.js",
+    "WDS": "npm test & webpack-dev-server --inline --hot",
+    "WDSC": "npm test & webpack-dev-server --inline --hot --open 'Google Chrome'",
+    "WDSF": "npm test & webpack-dev-server --inline --hot --open 'Firefox'",
+    "WDSS": "npm test & webpack-dev-server --inline --hot --open 'Safari'"
+  },
   "dependencies": {
     "@emotion/core": "^10.0.22",
     "@emotion/styled": "^10.0.23",
+    "bcrypt": "^3.0.7",
+    "bcryptjs": "^2.4.3",
     "chart.js": "^2.9.0",
     "chartjs-plugin-lineheight-annotation": "^0.3.5",
+    "config": "^3.2.4",
     "core-js": "^3.6.0",
+    "express": "^4.17.1",
+    "express-validator": "^5.3.1",
     "font-awesome": "^4.7.0",
     "gh-pages": "^2.1.1",
+    "gravatar": "^1.8.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.8.3",
     "prop-types": "^15.7.2",
     "query-string": "^6.9.0",
     "react": "^16.11.0",
     "react-chartjs-2": "^2.8.0",
     "react-dom": "^16.11.0",
     "react-icons": "^3.8.0",
-    "react-instagram-embed": "^1.5.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.3.0",
     "react-slick": "latest",
+    "request": "^2.88.0",
     "sass": "^1.23.7",
     "slick-carousel": "^1.8.1",
     "slug": "^1.1.0",
@@ -28,34 +52,14 @@
     "tabs": "^0.2.0",
     "url-loader": "^3.0.0"
   },
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "webpack-dev-server  --config webpack.dev.js --open",
-    "build": "webpack --config webpack.prod.js --open",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "presets": [
-    "@babel/preset-env",
-    "@babel/preset-react"
-  ],
-  "plugins": [
-    [
-      "react-hooks",
-      "@babel/plugin-proposal-class-properties"
-    ]
-  ],
   "devDependencies": {
-    "@babel/core": "^7.7.5",
-    "@babel/preset-env": "^7.7.6",
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
     "@babel/preset-react": "^7.7.4",
     "babel-loader": "^8.0.6",
     "bootstrap": "^4.4.1",
     "clean-webpack-plugin": "^3.0.0",
+    "concurrently": "^4.1.2",
     "css-loader": "^3.4.0",
     "eslint-plugin-react-hooks": "^2.3.0",
     "file-loader": "^5.0.2",
@@ -64,17 +68,14 @@
     "jquery": "^3.4.1",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.0",
+    "nodemon": "^1.19.4",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "popper.js": "^1.16.0",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.2",
-    "webpack": "^4.41.4",
+    "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1",
     "webpack-merge": "^4.2.2"
-  },
-  "rules": {
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
   }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Loading from './Loading';
-import { getArticles } from '../api/api.js';
+import { getArticles } from '../api/api';
 import styled from '@emotion/styled';
 
 const SeparatorLine = styled.h6`
@@ -64,7 +64,7 @@ function Articles(props) {
                 alt={articles.name}
                 style={{ width: '100%', height: '250px' }}
               />
-              <h4 className="pt-2">{articles.title}</h4>
+              <h4 className='pt-2'>{articles.title}</h4>
             </Link>
             <p className='text-muted'>
               {articles.date.toLocaleString('default', {

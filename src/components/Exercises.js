@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { getExercises } from '../api/api.js';
+import { getExercises } from '../api/api';
 import Loading from './Loading';
 import CheckBox from './CheckBox';
 import styled from '@emotion/styled';
