@@ -12,7 +12,7 @@ module.exports = merge(common, {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      template: './client/index.html'
     })
   ],
   devServer: {
@@ -22,25 +22,16 @@ module.exports = merge(common, {
     proxy: [
       // allows redirect of requests to webpack-dev-server to another destination
       {
-        context: ['/api', '/auth'], // can have multiple
-        target: 'http://localhost:8080', // server and port to redirect to
+        context: ['/api'], // can have multiple
+        target: 'http://localhost:3001', // server and port to redirect to
         secure: false
       }
     ],
-    port: 3030, // port webpack-dev-server listens to, defaults to 8080
+    port: 3000, // port webpack-dev-server listens to, defaults to 3001
     overlay: {
-      // Shows a full-screen overlay in the browser when there are compiler errors or warnings
-      warnings: false, // defaults to false
-      errors: false // defaults to false
+      warnings: false,
+      errors: false
     }
-    // port: 3000,
-    // open: true
-    // proxy: {
-    //   '^/api*': {
-    //     target: 'http://localhost:3000/api',
-    //     secure: false
-    //   }
-    // }
   },
   module: {
     rules: [

@@ -1,35 +1,18 @@
 const express = require('express');
-const path = require('path');
+const connectDB = require('./config/db');
 const app = express();
-const DIST_DIR = path.join(__dirname, '../dist');
-const HTML_FILE = path.join(DIST_DIR, 'index.html');
 
-const mockResponse = {
-  foo: 'bar',
-  bar: 'foo'
-};
+// Connect Database
+connectDB();
 
-app.use(express.static(DIST_DIR));
+// Initialize Middleware
+app.use(express.json({ extended: false }));
 
-app.get('/', (req, res) => {
-  res.sendFile(HTML_FILE);
-});
+// API Routes
+app.use('/api/users', require('./routes/api/users'));
+app.use('/api/auth', require('./routes/api/auth'));
+app.use('/api/profile', require('./routes/api/profile'));
 
-app.get('/api', (req, res) => {
-  res.send(mockResponse);
-});
+const PORT = process.env.PORT || 3001;
 
-app.get('/api/customers', (req, res) => {
-  const customers = [
-    { id: 1, firstName: 'John', lastName: 'Doe' },
-    { id: 2, firstName: 'Brad', lastName: 'Traversy' },
-    { id: 3, firstName: 'Mary', lastName: 'Swanson' }
-  ];
-  res.json(customers);
-});
-
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, function() {
-  console.log('App listening on port: ' + PORT);
-});
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
