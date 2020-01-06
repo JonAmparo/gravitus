@@ -25,6 +25,7 @@ const AddWorkout = ({ addWorkout, history }) => {
       <p className='lead'>
         <i className='fas fa-dumbbell' /> Add workout
       </p>
+
       <form
         onSubmit={e => {
           e.preventDefault();
@@ -39,6 +40,7 @@ const AddWorkout = ({ addWorkout, history }) => {
           onChange={e => onChange(e)}
           required
         />
+
         <FormInput
           type='text'
           label='* Duration'
@@ -48,9 +50,6 @@ const AddWorkout = ({ addWorkout, history }) => {
           required
         />
 
-        {/* Todo: Add exercise button that +1 a exercise form*/}
-        {/* Todo: Add set button that +1 a set form (rep/weight)*/}
-
         <FormInput
           type='textarea'
           name='description'
@@ -59,7 +58,7 @@ const AddWorkout = ({ addWorkout, history }) => {
           onChange={e => onChange(e)}
         />
 
-        <input type='submit' className='btn btn-primary my-1' />
+        <input type='submit' className='btn btn-primary my-1 mr-2' />
         <Link className='btn btn-light my-1' to='/dashboard'>
           Go Back
         </Link>

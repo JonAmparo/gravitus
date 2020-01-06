@@ -12,7 +12,7 @@ const FooterColumn = styled.div`
 const FooterText = styled.span`
   font-size: 0.94118rem;
   color: black;
-  float: left;
+  // float: left;
 `;
 
 const FooterLink = styled(Link)`
@@ -21,7 +21,8 @@ const FooterLink = styled(Link)`
 `;
 
 const SocialProfiles = () => (
-  <div className='float-right'>
+  // <div className='float-right'>
+  <div>
     {SOCIAL_PROFILES.map(SOCIAL_PROFILES => {
       return (
         <SocialProfile
@@ -34,9 +35,15 @@ const SocialProfiles = () => (
 );
 
 const SocialProfile = props => {
+  const FooterSocial = styled.span`
+    @media (min-width: 576px) {
+      float: right;
+    }
+  `;
+
   const { link, image } = props.socialProfile;
   return (
-    <span className='mx-2'>
+    <FooterSocial className='mx-2'>
       <a href={link} target='_blank' rel='noopener noreferrer'>
         <img
           src={image}
@@ -45,14 +52,14 @@ const SocialProfile = props => {
           className='pb-0'
         />
       </a>
-    </span>
+    </FooterSocial>
   );
 };
 
 const OtherLinks = () => {
   return (
     <FooterText>
-      ©2015-2019 Gravitus, Inc. |{' '}
+      &nbsp; | &nbsp;
       <FooterLink to='/gravitus/privacy'>Privacy Policy</FooterLink>
       &nbsp; | &nbsp;
       <FooterLink to='/gravitus/support'>Support</FooterLink>
@@ -66,13 +73,20 @@ const OtherLinks = () => {
 export default function Footer() {
   return (
     <div className='container-fluid bg-light border-top border-dark pt-3 pb-2'>
-      <div className='row align-items-center justify-content-center'>
-        <FooterColumn className='col-md-7'>
+      <div className='row align-items-center justify-content-between'>
+        <FooterColumn className='col-sm-6 my-2'>
           <OtherLinks />
         </FooterColumn>
-        <FooterColumn className='col-md-5 '>
+        <FooterColumn className='col-sm-6 my-2'>
           <SocialProfiles />
         </FooterColumn>
+      </div>
+      <div className='row justify-content-center'>
+        <FooterText>
+          <div className='text-center pt-3 large'>
+            ©2015-2019 Gravitus, Inc.
+          </div>
+        </FooterText>
       </div>
     </div>
   );

@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const DashboardActions = () => {
   return (
-    <div>
-      <Link to='/add-workout' className='btn btn-light'>
-        <i className='fas fa-dumbbell text-primary' /> Add Workout
+    <div className=''>
+      <Link to='/add-workout' className='btn btn-success'>
+        <i className='fas fa-dumbbell text-light' /> Add Workout 
       </Link>
     </div>
   );

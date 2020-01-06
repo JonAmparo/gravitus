@@ -64,7 +64,7 @@ const EditProfile = ({
       <p className='lead'>
         <i className='fas fa-user' /> Add some changes to your profile
       </p>
-      <form onSubmit={e => onSubmit(e)}>
+      <form className="form" onSubmit={e => onSubmit(e)}>
         <FormInput
           type='text'
           label='Website'
