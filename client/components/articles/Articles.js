@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import Loading from './layout/Loading';
-import { getArticles } from '../api/api';
+import Loading from '../layout/Loading';
+import { getArticles } from '../../api/api';
 import styled from '@emotion/styled';
 
 const SeparatorLine = styled.h6`
@@ -18,12 +18,12 @@ const SeparatorLine = styled.h6`
 `;
 
 function Articles(props) {
-  const [articles, setArticles] = React.useState(null);
-  const [loading, setLoading] = React.useState(true);
-  const [error, setError] = React.useState(null);
+  const [articles, setArticles] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const { match } = props;
 
-  React.useEffect(() => {
+  useEffect(() => {
     getArticles()
       .then(articles => {
         setArticles(articles);
@@ -46,7 +46,7 @@ function Articles(props) {
   }
 
   return (
-    <React.Fragment>
+    <Fragment>
       <h1 className='text-center'>Articles</h1>
       <SeparatorLine>LATEST ARTICLES</SeparatorLine>
       <div className='row'>
@@ -76,7 +76,7 @@ function Articles(props) {
           </div>
         ))}
       </div>
-    </React.Fragment>
+    </Fragment>
   );
 }
 

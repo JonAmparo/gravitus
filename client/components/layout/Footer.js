@@ -81,13 +81,13 @@ export default function Footer() {
           <SocialProfiles />
         </FooterColumn>
       </div>
-      <div className='row justify-content-center'>
+      {/* <div className='row justify-content-center'>
         <FooterText>
           <div className='text-center pt-3 large'>
             ©2015-2019 Gravitus, Inc.
           </div>
         </FooterText>
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -2,10 +2,10 @@ import React from 'react';
 import { IoIosInformationCircleOutline } from 'react-icons/io';
 import { FiUser, FiUsers } from 'react-icons/fi';
 import { AiOutlineTrophy } from 'react-icons/ai';
-import Tabs from './util/Tabs';
+import Tabs from '../util/Tabs';
 // import styled from '@emotion/styled';
 import Slider from 'react-slick';
-import Dashboard from './chart/Index';
+import Dashboard from '../chart/Index';
 
 // const Images = styled.img`
 //   height: 125px;

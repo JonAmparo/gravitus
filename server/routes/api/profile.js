@@ -152,7 +152,17 @@ router.put(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { workoutname, duration, volume, date, description } = req.body;
+    const {
+      workoutname,
+      duration,
+      volume,
+      date,
+      description
+      // exercise: {
+      //   exerciseName,
+      //   set: { reps, weight }
+      // }
+    } = req.body;
 
     const newWorkout = {
       workoutname,
@@ -160,6 +170,13 @@ router.put(
       volume,
       date,
       description
+      // exercise: {
+      //   exerciseName,
+      //   set: {
+      //     reps,
+      //     weight
+      //   }
+      // }
     };
 
     try {
@@ -209,10 +226,10 @@ router.put(
     [
       check('exerciseName', 'Exercise name is required')
         .not()
-        .isEmpty(),
-      check('set', `Set can't be empty`)
-        .not()
         .isEmpty()
+      // check('set', `Set can't be empty`)
+      //   .not()
+      //   .isEmpty()
     ]
   ],
   async (req, res) => {
@@ -236,8 +253,10 @@ router.put(
 
     try {
       const profile = await Profile.findOne({ user: req.user.id });
+      const { workout } = profile;
 
-      profile.workout.exercise.unshift(newExercise);
+      workout.exercise.unshift(newExercise);
+      console.log('thing 2');
 
       await profile.save();
 

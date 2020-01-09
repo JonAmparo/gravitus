@@ -11,19 +11,21 @@ import Alert from './components/layout/Alert';
 import NotFound from './components/layout/NotFound';
 
 // Components
-import Dashboard from './components/dashboard/Dashboard';
-import AddWorkout from './components/profile-forms/AddWorkout';
-import Articles from './components/Articles';
-import ArticlesPage from './components/ArticlesPage';
-import Exercises from './components/Exercises';
-import ExercisesPage from './components/ExercisesPage';
+import Landing from './components/layout/Landing';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
-import Profiles from './components/Profiles';
-import ProfilePage from './components/ProfilePage';
-import EditProfile from './components/profile-forms/EditProfile';
-import ProfilesEdit from './components/ProfilesEdit';
-import Landing from './components/layout/Landing';
+import Dashboard from './components/dashboard/Dashboard';
+
+import Articles from './components/articles/Articles';
+import ArticlesPage from './components/articles/ArticlesPage';
+import Exercises from './components/exercises/Exercises';
+import ExercisesPage from './components/exercises/ExercisesPage';
+
+import AddWorkout from './components/workouts/AddWorkout';
+
+import CreateProfile from './components/profile/CreateProfile';
+import EditProfile from './components/profile/EditProfile';
+import ProfilePage from './components/profile/Profile';
 
 // Redux
 import { Provider } from 'react-redux';
@@ -60,13 +62,12 @@ const App = () => {
             <PrivateRoute exact path='/dashboard' component={Dashboard} />
             <PrivateRoute exact path='/profile' component={ProfilePage} />
             <PrivateRoute exact path='/add-workout' component={AddWorkout} />
-            <PrivateRoute exact path='/edit-profile' component={EditProfile} />
-            <PrivateRoute exact path='/profiles' component={Profiles} />
             <PrivateRoute
               exact
-              path='/profiles/profilesEdit'
-              component={ProfilesEdit}
+              path='/create-profile'
+              component={CreateProfile}
             />
+            <PrivateRoute exact path='/edit-profile' component={EditProfile} />
             <Route component={NotFound} />
           </Switch>
         </Wrapper>

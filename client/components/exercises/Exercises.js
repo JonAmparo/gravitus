@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { getExercises } from '../api/api';
-import Loading from './layout/Loading';
-import CheckBox from './util/CheckBox';
+import { getExercises } from '../../api/api';
+import Loading from '../layout/Loading';
+import CheckBox from '../util/CheckBox';
 import styled from '@emotion/styled';
 
 const Images = styled.img({

@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { getCurrentProfile } from '../../actions/profile';
 import Loading from '../layout/Loading';
 import DashboardActions from './DashboardActions';
-import Workout from './Workout';
+import Workout from '../workouts/Workout';
 
 const Dashboard = ({
   getCurrentProfile,
@@ -25,7 +25,7 @@ const Dashboard = ({
       {profile !== null ? (
         <Fragment>
           <DashboardActions />
-          <Workout workout={profile.workout} />
+          <Workout workout={profile.workout} profile={profile} />
           <div className='my-2'></div>
         </Fragment>
       ) : (

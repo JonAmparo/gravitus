@@ -2,9 +2,10 @@ import React, { Fragment, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Loading from './layout/Loading';
-import { getCurrentProfile, deleteAccount } from '../actions/profile';
-import Workout from './dashboard/Workout';
+import Loading from '../layout/Loading';
+import { getCurrentProfile, deleteAccount } from '../../actions/profile';
+import Workout from '../workouts/Workout';
+import FriendsList from '../friends/FriendsList';
 
 const ProfilePage = ({
   getCurrentProfile,
@@ -48,7 +49,19 @@ const ProfilePage = ({
             </button>
           </div>
         </div>
-        <Workout workout={profile.workout} />
+
+        <div className='my-2'>
+          <h6 className='separatorLine text-secondary row'>FRIENDS</h6>
+          <FriendsList />
+        </div>
+        {/* Todo: Add friends 2 max */}
+        {/* <Friends /> */}
+
+        <h6 className='separatorLine text-secondary row'>RECENT WORKOUTS</h6>
+        <Workout workout={profile.workout} profile={profile} />
+        {/* Todo: limit 2 workouts */}
+        {/* todo: clickable workouts */}
+        {/* todo: view all workouts */}
       </Fragment>
     </Fragment>
   );

@@ -21,11 +21,7 @@ const AddWorkout = ({ addWorkout, history }) => {
 
   return (
     <Fragment>
-      <h1>Add An Workout</h1>
-      <p className='lead'>
-        <i className='fas fa-dumbbell' /> Add workout
-      </p>
-
+      <h1 className='text-center'>Add workout</h1>
       <form
         onSubmit={e => {
           e.preventDefault();
@@ -34,7 +30,7 @@ const AddWorkout = ({ addWorkout, history }) => {
       >
         <FormInput
           type='text'
-          label='* Workout Name'
+          label='Workout Name'
           name='workoutname'
           value={workoutname}
           onChange={e => onChange(e)}
@@ -43,7 +39,7 @@ const AddWorkout = ({ addWorkout, history }) => {
 
         <FormInput
           type='text'
-          label='* Duration'
+          label='Duration'
           name='duration'
           value={duration}
           onChange={e => onChange(e)}
@@ -64,7 +60,7 @@ const AddWorkout = ({ addWorkout, history }) => {
         </Link>
       </form>
 
-      <AddWorkoutExercise />
+      {/* <AddWorkoutExercise /> */}
     </Fragment>
   );
 };

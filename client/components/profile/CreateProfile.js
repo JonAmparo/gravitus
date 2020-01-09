@@ -1,14 +1,14 @@
-import React, { Fragment, useState, useEffect } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import React, { useEffect, useState, Fragment } from 'react';
+import { Link, withRouter, Redirect } from 'react-router-dom';
 import FormInput from '../util/FormInput';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createProfile, getCurrentProfile } from '../../actions/profile';
 
-const EditProfile = ({
-  profile: { profile, loading },
+const CreateProfile = ({
   createProfile,
   getCurrentProfile,
+  profile: { profile, loading },
   history
 }) => {
   const [formData, setFormData] = useState({
@@ -21,24 +21,7 @@ const EditProfile = ({
     youtube: '',
     instagram: ''
   });
-
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
-
-  useEffect(() => {
-    getCurrentProfile();
-
-    setFormData({
-      website: loading || !profile.website ? '' : profile.website,
-      location: loading || !profile.location ? '' : profile.location,
-      bio: loading || !profile.bio ? '' : profile.bio,
-      twitter: loading || !profile.social ? '' : profile.social.twitter,
-      facebook: loading || !profile.social ? '' : profile.social.facebook,
-      linkedin: loading || !profile.social ? '' : profile.social.linkedin,
-      youtube: loading || !profile.social ? '' : profile.social.youtube,
-      instagram: loading || !profile.social ? '' : profile.social.instagram
-    });
-  }, [loading, getCurrentProfile]);
-
   const {
     website,
     location,
@@ -49,39 +32,41 @@ const EditProfile = ({
     youtube,
     instagram
   } = formData;
-
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
-
   const onSubmit = e => {
     e.preventDefault();
-    createProfile(formData, history, true);
+    createProfile(formData, history);
   };
-
-  return (
+  useEffect(() => {
+    getCurrentProfile();
+  }, [getCurrentProfile]);
+  return loading && profile === null ? (
+    <Redirect to='/dashboard' />
+  ) : (
     <Fragment>
-      <h1 className=''>Edit Your Profile</h1>
-      <p className='lead'>
-        <i className='fas fa-user' /> Add some changes to your profile
-      </p>
-      <form className="form" onSubmit={e => onSubmit(e)}>
+      <h1 className='text-center'>
+        <i className='fas fa-user' />
+        Create Your Profile
+      </h1>
+      <form className='form' onSubmit={e => onSubmit(e)}>
         <FormInput
           type='text'
-          label='Website'
+          placeholder='Website'
           name='website'
           value={website}
           onChange={e => onChange(e)}
         />
         <FormInput
           type='text'
-          label='Location'
+          placeholder='Location'
           name='location'
           value={location}
           onChange={e => onChange(e)}
         />
         <FormInput
-          label='A short bio of yourself'
           type='textarea'
+          placeholder='A short bio of yourself'
           name='bio'
           value={bio}
           onChange={e => onChange(e)}
@@ -96,7 +81,6 @@ const EditProfile = ({
           </button>
           <span className='ml-2'>Optional</span>
         </div>
-
         {displaySocialInputs && (
           <Fragment>
             <div className='form-group social-input'>
@@ -165,16 +149,14 @@ const EditProfile = ({
   );
 };
 
-EditProfile.propTypes = {
+CreateProfile.propTypes = {
   createProfile: PropTypes.func.isRequired,
   getCurrentProfile: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired
 };
-
 const mapStateToProps = state => ({
   profile: state.profile
 });
-
 export default connect(mapStateToProps, { createProfile, getCurrentProfile })(
-  withRouter(EditProfile)
+  withRouter(CreateProfile)
 );

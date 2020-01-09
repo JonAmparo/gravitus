@@ -31,6 +31,7 @@ const AddExercises = () => {
     exerciseName: ''
   });
   const { exerciseName } = formData;
+  console.log(exerciseName);
 
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
