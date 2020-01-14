@@ -4,15 +4,11 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Loading from '../layout/Loading';
 import WorkoutItem from './WorkoutItem';
-import WorkoutItem2 from './WorkoutItem2';
 import { getWorkouts } from '../../actions/workout';
 import AddWorkoutButton from './AddWorkoutButton';
+import Workouts from './Workouts';
 
-const Workouts = ({
-  auth,
-  getWorkouts,
-  workout: { workouts, loading, user }
-}) => {
+const WorkoutsPage = ({ getWorkouts, workout: { workouts, loading } }) => {
   useEffect(() => {
     getWorkouts();
   }, [getWorkouts]);
@@ -21,25 +17,20 @@ const Workouts = ({
     <Loading />
   ) : (
     <Fragment>
-      {/* {!auth.loading && user === auth.user._id && ( */}
-      <div className='workouts'>
-        {workouts.map(workout => (
-          <WorkoutItem2 key={workout._id} workout={workout} />
-        ))}
-      </div>
-      {/* )} */}
+      <h1 className='text-center'>Workouts</h1>
+      <AddWorkoutButton />
+      <Workouts />
     </Fragment>
   );
 };
 
-Workouts.propTypes = {
+WorkoutsPage.propTypes = {
   getWorkouts: PropTypes.func.isRequired,
   workout: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  auth: state.auth,
   workout: state.workout
 });
 
-export default connect(mapStateToProps, { getWorkouts })(Workouts);
+export default connect(mapStateToProps, { getWorkouts })(WorkoutsPage);

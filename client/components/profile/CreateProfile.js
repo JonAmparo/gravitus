@@ -42,13 +42,10 @@ const CreateProfile = ({
     getCurrentProfile();
   }, [getCurrentProfile]);
   return loading && profile === null ? (
-    <Redirect to='/dashboard' />
+    <Redirect to='/profile' />
   ) : (
     <Fragment>
-      <h1 className='text-center'>
-        <i className='fas fa-user' />
-        Create Your Profile
-      </h1>
+      <h1 className='text-center'>Create Your Profile</h1>
       <form className='form' onSubmit={e => onSubmit(e)}>
         <FormInput
           type='text'
@@ -77,7 +74,7 @@ const CreateProfile = ({
             type='button'
             className='btn btn-light'
           >
-            Add Social Network Links
+            Add Social Media Links
           </button>
           <span className='ml-2'>Optional</span>
         </div>

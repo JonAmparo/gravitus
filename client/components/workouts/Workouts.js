@@ -4,15 +4,10 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Loading from '../layout/Loading';
 import WorkoutItem from './WorkoutItem';
-import WorkoutItem2 from './WorkoutItem2';
 import { getWorkouts } from '../../actions/workout';
 import AddWorkoutButton from './AddWorkoutButton';
 
-const Workouts = ({
-  auth,
-  getWorkouts,
-  workout: { workouts, loading, user }
-}) => {
+const Workouts = ({ getWorkouts, workout: { workouts, loading } }) => {
   useEffect(() => {
     getWorkouts();
   }, [getWorkouts]);
@@ -21,13 +16,11 @@ const Workouts = ({
     <Loading />
   ) : (
     <Fragment>
-      {/* {!auth.loading && user === auth.user._id && ( */}
       <div className='workouts'>
         {workouts.map(workout => (
-          <WorkoutItem2 key={workout._id} workout={workout} />
+          <WorkoutItem key={workout._id} workout={workout} />
         ))}
       </div>
-      {/* )} */}
     </Fragment>
   );
 };
@@ -38,7 +31,6 @@ Workouts.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  auth: state.auth,
   workout: state.workout
 });
 

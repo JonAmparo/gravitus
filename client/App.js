@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { createBrowserHistory } from "history";
 import './style.scss';
 
 // Utilities
@@ -22,10 +23,14 @@ import Exercises from './components/exercises/Exercises';
 import ExercisesPage from './components/exercises/ExercisesPage';
 
 import AddWorkout from './components/workouts/AddWorkout';
+import WorkoutsPage from './components/workouts/WorkoutsPage';
+import Workout from './components/workout/Workout';
 
 import CreateProfile from './components/profile/CreateProfile';
 import EditProfile from './components/profile/EditProfile';
-import ProfilePage from './components/profile/Profile';
+import ProfilePage from './components/profile/ProfilePage';
+import Profiles from './components/profile/Profiles';
+import ProfilesId from './components/profile/ProfilesId';
 
 // Redux
 import { Provider } from 'react-redux';
@@ -46,7 +51,7 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <Router>
+      <Router history={createBrowserHistory}>
         <Navbar />
         <Wrapper>
           <Alert />
@@ -58,10 +63,14 @@ const App = () => {
             <Route exact path='/articles/:articleId' component={ArticlesPage} />
             <Route exact path='/exercises' component={Exercises} />
             <Route exact path='/exercises/:exId' component={ExercisesPage} />
+            <Route exact path='/profiles' component={Profiles} />
+            <Route exact path='/profiles/:id' component={ProfilePage} />
 
             <PrivateRoute exact path='/dashboard' component={Dashboard} />
             <PrivateRoute exact path='/profile' component={ProfilePage} />
             <PrivateRoute exact path='/add-workout' component={AddWorkout} />
+            <PrivateRoute exact path='/workouts' component={WorkoutsPage} />
+            <PrivateRoute exact path='/workouts/:id' component={Workout} />
             <PrivateRoute
               exact
               path='/create-profile'

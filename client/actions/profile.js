@@ -163,7 +163,11 @@ export const addWorkoutExercise = (formData, history) => async dispatch => {
       }
     };
 
-    const res = await axios.put('/api/profile/workout/exercise', formData, config);
+    const res = await axios.put(
+      '/api/profile/workout/exercise',
+      formData,
+      config
+    );
 
     dispatch({
       type: UPDATE_PROFILE,
@@ -189,7 +193,11 @@ export const addWorkoutExercise = (formData, history) => async dispatch => {
 
 // Delete account & profile
 export const deleteAccount = () => async dispatch => {
-  if (window.confirm('Are you sure? This can NOT be undone!')) {
+  if (
+    window.confirm(
+      `Are you sure you want to delete your account? This action can't be undone!`
+    )
+  ) {
     try {
       await axios.delete('/api/profile');
 

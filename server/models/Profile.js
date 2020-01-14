@@ -35,7 +35,7 @@ const ProfileSchema = new mongoose.Schema({
       },
       exercise: [
         {
-          exerciseName: {
+          exercisename: {
             type: String
           },
           set: [

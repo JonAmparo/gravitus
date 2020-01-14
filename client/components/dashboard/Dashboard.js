@@ -4,8 +4,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getCurrentProfile } from '../../actions/profile';
 import Loading from '../layout/Loading';
-import DashboardActions from './DashboardActions';
-import Workout from '../workouts/Workout';
+import AddWorkoutButton from '../workouts/AddWorkoutButton';
+import Workout from '../workoutsOLD/Workout';
+import Workouts from '../workouts/Workouts';
 
 const Dashboard = ({
   getCurrentProfile,
@@ -24,16 +25,16 @@ const Dashboard = ({
 
       {profile !== null ? (
         <Fragment>
-          <DashboardActions />
+          <AddWorkoutButton />
           <Workout workout={profile.workout} profile={profile} />
-          <div className='my-2'></div>
+          <Workouts />
         </Fragment>
       ) : (
         <Fragment>
-          <p>You have not yet setup a profile, please add some info</p>
-          <DashboardActions />
+          <p>Hello {user.name}! Please set up your profile </p>
+          <AddWorkoutButton />
           <Link to='/create-profile' className='btn btn-primary my-1'>
-            Create Profile
+            Set up your profile
           </Link>
         </Fragment>
       )}

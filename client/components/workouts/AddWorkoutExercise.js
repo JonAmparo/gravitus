@@ -3,7 +3,7 @@ import FormInput from '../util/FormInput';
 import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addWorkout } from './AddWorkout';
+import { addWorkout } from '../../actions/workout';
 
 const AddWorkout = ({ addWorkout, history }) => {
   const [exercise, setExercise] = useState([]);
@@ -28,10 +28,10 @@ const AddWorkout = ({ addWorkout, history }) => {
 const AddExercises = () => {
   const [workoutSets, setWorkoutSets] = useState([]);
   const [formData, setFormData] = useState({
-    exerciseName: ''
+    exercisename: ''
   });
-  const { exerciseName } = formData;
-  console.log(exerciseName);
+  const { exercisename } = formData;
+  console.log(exercisename);
 
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -45,8 +45,8 @@ const AddExercises = () => {
       <FormInput
         type='text'
         label='Exercise Name'
-        name='exerciseName'
-        value={exerciseName}
+        name='exercisename'
+        value={exercisename}
         onChange={e => onChange(e)}
         required
       />
@@ -63,9 +63,24 @@ const AddExercises = () => {
 const AddSets = () => {
   const [formData, setFormData] = useState({
     reps: '',
-    weight: ''
+    weight: '',
+    reps2: '',
+    weight2: '',
+    reps3: '',
+    weight3: '',
+    reps4: '',
+    weight4: ''
   });
-  const { reps, weight } = formData;
+  const {
+    reps,
+    weight,
+    reps2,
+    weight2,
+    reps3,
+    weight3,
+    reps4,
+    weight4
+  } = formData;
 
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });

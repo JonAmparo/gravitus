@@ -6,6 +6,7 @@ const auth = require('../../middleware/auth');
 const { check, validationResult } = require('express-validator/check');
 
 const Profile = require('../../models/Profile');
+const Workout = require('../../models/Workout');
 const User = require('../../models/User');
 
 // @route    GET api/profile/me
@@ -112,12 +113,12 @@ router.get('/user/:user_id', async (req, res) => {
 });
 
 // @route    DELETE api/profile
-// @desc     Delete profile, user & posts
+// @desc     Delete profile, user & workouts
 // @access   Private
 router.delete('/', auth, async (req, res) => {
   try {
-    // Remove user posts
-    await Post.deleteMany({ user: req.user.id });
+    // Remove user workouts
+    await Workout.deleteMany({ user: req.user.id });
     // Remove profile
     await Profile.findOneAndRemove({ user: req.user.id });
     // Remove user
@@ -159,7 +160,7 @@ router.put(
       date,
       description
       // exercise: {
-      //   exerciseName,
+      //   exercisename,
       //   set: { reps, weight }
       // }
     } = req.body;
@@ -171,7 +172,7 @@ router.put(
       date,
       description
       // exercise: {
-      //   exerciseName,
+      //   exercisename,
       //   set: {
       //     reps,
       //     weight
@@ -224,7 +225,7 @@ router.put(
   [
     auth,
     [
-      check('exerciseName', 'Exercise name is required')
+      check('exercisename', 'Exercise name is required')
         .not()
         .isEmpty()
       // check('set', `Set can't be empty`)
@@ -239,12 +240,12 @@ router.put(
     }
 
     const {
-      exerciseName,
+      exercisename,
       set: { reps, weight }
     } = req.body;
 
     const newExercise = {
-      exerciseName,
+      exercisename,
       set: {
         reps,
         weight

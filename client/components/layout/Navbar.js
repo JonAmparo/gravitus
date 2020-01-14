@@ -22,9 +22,14 @@ const NavList = styled.li`
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <Fragment>
-      <NavList className='nav-item'>
+      {/* <NavList className='nav-item'>
         <Link to={'/'} className={'nav-link linkStyle m-1'}>
           Home
+        </Link>
+      </NavList> */}
+      <NavList className='nav-item'>
+        <Link to={'/workouts'} className={'nav-link linkStyle m-1'}>
+          Workouts
         </Link>
       </NavList>
       <NavList className='nav-item'>

@@ -33,7 +33,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   };
 
   if (isAuthenticated) {
-    return <Redirect to='/dashboard' />;
+    return <Redirect to='/profile' />;
   }
 
   return (
@@ -50,11 +50,11 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
               onChange={e => onChange(e)}
               required
             />
-            <label className='text-secondary'>Select a gender:</label> <br />
+            {/* <label className='text-secondary'>Select a gender:</label> <br />
             <select name='Gender' value={gender} onChange={e => onChange(e)}>
               <option value='Male'>Male</option>
               <option value='Female'>Female</option>
-            </select>
+            </select> */}
             <FormInput
               label='Email'
               name='email'
@@ -79,14 +79,14 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
               onChange={e => onChange(e)}
               required
             />
-            <label className='text-secondary'>Please upload an Avatar:</label>
+            {/* <label className='text-secondary'>Please upload an Avatar:</label>
             <FormInput
               name='myFile'
               type='file'
               inputClassName=''
               value={image}
               onChange={e => onChange(e)}
-            />
+            /> */}
             <div className='float-right'>
               <input
                 type='submit'
