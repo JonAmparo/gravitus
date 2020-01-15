@@ -7,6 +7,7 @@ import WorkoutItem from '../workouts/WorkoutItem';
 import ExerciseItem from '../workout/ExerciseItem';
 import { getWorkout } from '../../actions/workout';
 import AddExercise from './AddExercise';
+import { IoIosArrowBack } from 'react-icons/io';
 
 const Workout = ({ getWorkout, workout: { workout, loading }, match }) => {
   useEffect(() => {
@@ -18,10 +19,12 @@ const Workout = ({ getWorkout, workout: { workout, loading }, match }) => {
   ) : (
     <Fragment>
       <h1 className='text-center'>Workout</h1>
-      <Link to='/workouts' className='btn btn-outline-light'>
+      <Link to='/workouts' className='text-danger'>
+        <IoIosArrowBack className='h4' />
         Back to Workouts
       </Link>
       <WorkoutItem workout={workout} showActions={false} />
+      <p className='lead text-muted mb-0 border-bottom-dark'>WORKOUT</p>
       <div className='exercises'>
         {workout.exercise.map(exercise => (
           <ExerciseItem
@@ -31,7 +34,11 @@ const Workout = ({ getWorkout, workout: { workout, loading }, match }) => {
           />
         ))}
       </div>
-      <AddExercise workout={workout} workoutId={workout._id} showActions={false}  />
+      <AddExercise
+        workout={workout}
+        workoutId={workout._id}
+        showActions={false}
+      />
     </Fragment>
   );
 };

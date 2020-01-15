@@ -15,6 +15,7 @@ const WorkoutItem = ({
 }) => (
   <div className='row align-items-center border-bottom border-dark my-2'>
     <div>
+      <div></div>
       <Link to={`/workouts/${_id}`}>
         <img className='profile' src={avatar} alt={name} />
       </Link>
@@ -24,6 +25,7 @@ const WorkoutItem = ({
       <h5 className='text-white mb-3'>{workoutname}</h5>
       <p className='small text-muted mb-3'>
         <Moment format='YYYY/MM/DD'>{date}</Moment>
+        {' - '} <span className='text-primary'>view workout</span>
       </p>
     </Link>
     <div className='float-right'>

@@ -27,6 +27,7 @@ const WorkoutItem2 = ({
             <h5 className='text-white mb-3'>{workoutname}</h5>
             <p className='small text-muted mb-3'>
               <Moment format='YYYY/MM/DD'>{date}</Moment>
+              {' - '} <span className='text-primary'>view workout</span>
             </p>
           </Link>
           <div className='float-right'>

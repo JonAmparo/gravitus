@@ -179,7 +179,8 @@ router.post(
         weight10: req.body.weight10
       };
 
-      workout.exercise.unshift(newExercise);
+      // workout.exercise.unshift(newExercise);
+      workout.exercise.push(newExercise);
 
       await workout.save();
 

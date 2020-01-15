@@ -7,7 +7,7 @@ import WorkoutItem2 from './WorkoutItem2';
 import { getWorkouts } from '../../actions/workout';
 import Tabs from '../util/Tabs';
 import { FiUser, FiUsers } from 'react-icons/fi';
-import { AiOutlineTrophy } from 'react-icons/ai';
+import { AiOutlineGlobal, AiOutlineTrophy } from 'react-icons/ai';
 import AddWorkoutButton from './AddWorkoutButton';
 
 const Workouts = ({ getWorkouts, workout: { workouts, loading } }) => {
@@ -40,7 +40,7 @@ const Workouts = ({ getWorkouts, workout: { workouts, loading } }) => {
             ))}
           </div>
         </Tabs.Tab>
-        <Tabs.Tab id='tab3' title={<AiOutlineTrophy />}>
+        <Tabs.Tab id='tab3' title={<AiOutlineGlobal />}>
           <h3 className='text-center pt-5'>Coming soon...</h3>
         </Tabs.Tab>
       </Tabs>
