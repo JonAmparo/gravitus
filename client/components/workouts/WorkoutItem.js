@@ -20,12 +20,12 @@ const WorkoutItem = ({
         <img className='profile' src={avatar} alt={name} />
       </Link>
     </div>
-    <Link to={`/workouts/${_id}`} className='ml-3 mr-auto'>
-      <p className='text-secondary mb-3'>{name}</p>
-      <h5 className='text-white mb-3'>{workoutname}</h5>
-      <p className='small text-muted mb-3'>
-        <Moment format='YYYY/MM/DD'>{date}</Moment>
-        {' - '} <span className='text-primary'>view workout</span>
+    <Link to={`/workouts/${_id}`} className='ml-2 mr-auto'>
+      <p className='text-secondary mb-2'>{name}</p>
+      <h6 className='text-white mb-2'>{workoutname}</h6>
+      <p className='small text-muted mb-2'>
+        <Moment format='LL'>{date}</Moment>
+        {' - '} <span className='text-primary'>view</span>
       </p>
     </Link>
     <div className='float-right'>

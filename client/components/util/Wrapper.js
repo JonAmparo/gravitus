@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 const Content = styled.section({
-  padding: '.15rem 1rem',
+  // padding: '.15rem 1rem',
   minHeight: '100vh',
   backgroundColor: '#272526'
 });

@@ -29,20 +29,15 @@ const ProfilePage = ({
           <Fragment>
             <div className='my-2 row'>
               <div>
-                <img
-                  style={{ height: '150px', width: '150px' }}
-                  src={user && user.avatar}
-                />
+                <img className='main-profile' src={user && user.avatar} />
               </div>
               <div className='p-2'>
                 <h4>{user && user.name}</h4>
                 <p>Last workout: Yesterday</p>
               </div>
               <div className='p-2 ml-auto'>
-                <Link to='/edit-profile'>
-                  <button className='btn btn-outline-light m-2'>
-                    Edit Profile
-                  </button>
+                <Link to='/edit-profile' className='btn btn-outline-light m-2'>
+                  Edit Profile
                 </Link>
                 <br />
                 <button

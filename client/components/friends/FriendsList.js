@@ -15,7 +15,7 @@ function FriendsList() {
                 className='profile'
               />
               <div className='ml-3 mr-auto'>
-                <h3>{user.name}</h3>
+                <h6>{user.name}</h6>
                 {user.twitter ? (
                   <a
                     href={'https://www.twitter.com/' + user.twitter}

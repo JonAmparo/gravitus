@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 // import { addWorkout } from '../../actions/profile';
 import { addWorkout } from '../../actions/workout';
 import AddWorkoutExercise from './AddWorkoutExercise';
+import { IoIosArrowBack } from 'react-icons/io';
 
 const AddWorkout = ({ addWorkout, history }) => {
   const [formData, setFormData] = useState({
@@ -20,14 +21,21 @@ const AddWorkout = ({ addWorkout, history }) => {
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
+  console.log('history 1', history);
+
   return (
     <Fragment>
       <h1 className='text-center'>Add workout</h1>
+      <Link to='/workouts' className='text-danger'>
+        <IoIosArrowBack className='h4' />
+        Back
+      </Link>
       <form
         onSubmit={e => {
           e.preventDefault();
           addWorkout(formData, history);
-          history.push('/workouts')
+          console.log('history 2', history);
+          history.push('/workouts');
         }}
       >
         <FormInput
@@ -38,7 +46,7 @@ const AddWorkout = ({ addWorkout, history }) => {
           onChange={e => onChange(e)}
           required
         />
-{/* 
+        {/* 
         <FormInput
           type='text'
           label='Duration'
@@ -56,10 +64,8 @@ const AddWorkout = ({ addWorkout, history }) => {
           onChange={e => onChange(e)}
         /> */}
 
-        <input type='submit' className='btn btn-primary my-1 mr-2' />
-        <Link className='btn btn-light my-1' to='/workouts'>
-          Go Back
-        </Link>
+        <input type='submit' className='btn btn-success my-1 mr-2' />
+
       </form>
 
       {/* Todo: if adding dynamic AddWorkoutExercise doesn't work. Make link to created exercise and append exercises into workout */}

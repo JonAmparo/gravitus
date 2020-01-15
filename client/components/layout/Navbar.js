@@ -4,6 +4,7 @@ import gravitus_logo from '../../assets/images/gravitus_logo.svg';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
+import { IoIosLogOut, IoIosLogIn } from 'react-icons/io';
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout, props }) => {
   console.log('props', props);
@@ -11,7 +12,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout, props }) => {
     <Fragment>
       <li className='nav-item'>
         <Link to={'/workouts'} className={'nav-link text-light m-1'}>
-          Workouts
+          Home
         </Link>
       </li>
       <li className='nav-item'>
@@ -32,8 +33,8 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout, props }) => {
       </li>
       <li className='nav-item'>
         <a onClick={logout} href='#!' className={'nav-link text-light m-1'}>
-          <i className='fas fa-sign-out-alt' />{' '}
-          <span className='hide-sm'>Logout</span>
+          {/* <IoIosLogOut className='h5 mb-0' />  */}
+          <span>Logout</span>
         </a>
       </li>
     </Fragment>
@@ -67,7 +68,8 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout, props }) => {
           to={'/register'}
           className={'btn btn-success nav-link text-light m-1'}
         >
-          Register
+          {/* <IoIosLogIn className='h5 mb-0' /> */}
+          <span>Register</span>
         </Link>
       </li>
     </Fragment>

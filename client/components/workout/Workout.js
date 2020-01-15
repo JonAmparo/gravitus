@@ -21,7 +21,7 @@ const Workout = ({ getWorkout, workout: { workout, loading }, match }) => {
       <h1 className='text-center'>Workout</h1>
       <Link to='/workouts' className='text-danger'>
         <IoIosArrowBack className='h4' />
-        Back to Workouts
+        Back
       </Link>
       <WorkoutItem workout={workout} showActions={false} />
       <p className='lead text-muted mb-0 border-bottom-dark'>WORKOUT</p>
