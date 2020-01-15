@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Navbar from './Navbar';
 import gravitus_logo from '../../assets/images/gravitus_logo.svg';
 
 const Landing = ({ isAuthenticated }) => {
@@ -56,20 +55,30 @@ const Landing = ({ isAuthenticated }) => {
                     Login
                   </Link>
                 </li>
+                <li className='nav-item'>
+                  <Link
+                    to={'/register'}
+                    className={'btn btn-success nav-link text-light m-1'}
+                  >
+                    Register
+                  </Link>
+                </li>
               </Fragment>
             </ul>
           </div>
         </nav>
       </div>
       {/* End Navbar*/}
-      <div className='text-center'>
-        <h1>Gravitus</h1>
-        <p className='lead'>You won't need another gym application</p>
-        <div>
-          <Link to='/register' className='btn btn-success mr-2'>
-            Sign Up
+      <div className='landing-inner'>
+        <h1 className='display-3'>GRAVITUS</h1>
+        <h3 className='text-primary'>
+          Powering the future&nbsp;of&nbsp;training.
+        </h3>
+        <div className='pt-3'>
+          <Link to='/register' className='btn btn-lg btn-success mr-2'>
+            Register
           </Link>
-          <Link to='/login' className='btn btn-outline-light'>
+          <Link to='/login' className='btn btn-lg btn-outline-light'>
             Login
           </Link>
         </div>

@@ -1,22 +1,16 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { IoIosInformationCircleOutline } from 'react-icons/io';
 import { FiUser, FiUsers } from 'react-icons/fi';
 import { AiOutlineTrophy } from 'react-icons/ai';
 import Tabs from '../util/Tabs';
-// import styled from '@emotion/styled';
 import Slider from 'react-slick';
 import Dashboard from '../chart/Index';
-
-// const Images = styled.img`
-//   height: 125px;
-//   width: 125px;
-// `;
 
 function ExercisesPage(props) {
   const { exercises } = props.location.state;
 
   return (
-    <React.Fragment>
+    <Fragment>
       <div className='text-center'>
         <h1>{exercises.name}</h1>
         <Tabs
@@ -39,7 +33,7 @@ function ExercisesPage(props) {
           </Tabs.Tab>
         </Tabs>
       </div>
-    </React.Fragment>
+    </Fragment>
   );
 }
 
@@ -65,18 +59,11 @@ function ExerciseInfo({ exercises }) {
         <div>
           <img
             className='img-fluid'
-            src='https://picsum.photos/id/1079/4496/3000'
-            alt={exercises.name + 'exercise'}
-          />
-        </div>
-        <div>
-          <img
-            className='img-fluid'
             src={exercises.image}
             alt={exercises.name + 'exercise'}
           />
         </div>
-          <div>
+        <div>
           <img
             className='img-fluid'
             src={exercises.image}
@@ -93,7 +80,14 @@ function ExerciseInfo({ exercises }) {
         <div>
           <img
             className='img-fluid'
-            src='https://picsum.photos/id/1083/4496/3000'
+            src={exercises.image}
+            alt={exercises.name + 'exercise'}
+          />
+        </div>
+        <div>
+          <img
+            className='img-fluid'
+            src={exercises.image}
             alt={exercises.name + 'exercise'}
           />
         </div>

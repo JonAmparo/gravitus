@@ -27,9 +27,9 @@ const Login = ({ login, isAuthenticated }) => {
 
   return (
     <Fragment>
+      <h1 className='text-center'>Sign In</h1>
       <div className='row justify-content-center mt-5'>
         <div className='col-md-8 border border-secondary rounded p-4'>
-          <h1>Sign In</h1>
           <p className='lead'>Sign Into Your Account</p>
           <form onSubmit={e => onSubmit(e)}>
             <FormInput
@@ -38,7 +38,6 @@ const Login = ({ login, isAuthenticated }) => {
               name='email'
               value={email}
               onChange={e => onChange(e)}
-              required
             />
 
             <FormInput
@@ -50,10 +49,14 @@ const Login = ({ login, isAuthenticated }) => {
               minLength='6'
             />
 
-            <input type='submit' className='btn btn-success' value='Login' />
+            <input
+              type='submit'
+              className='btn btn-success float-right'
+              value='Login'
+            />
           </form>
-          <p className='my-1'>
-            Don't have an account? <Link to='/register'>Sign Up</Link>
+          <p className='pt-4 pb-0'>
+            Don't have an account? <Link to='/register'>Sign up</Link>
           </p>
         </div>
       </div>

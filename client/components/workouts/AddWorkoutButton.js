@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 
 const AddWorkoutButton = () => {
   return (
-    <Link to='/add-workout' className='btn btn-success'>
-      <i className='fas fa-dumbbell text-light' /> Add Workout
-    </Link>
+    <div className='text-center'>
+      <Link to='/add-workout' className='btn btn-success text-center'>
+        <i className='fas fa-dumbbell text-light' /> New Workout
+      </Link>
+    </div>
   );
 };
 

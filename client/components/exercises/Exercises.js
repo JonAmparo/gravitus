@@ -147,7 +147,7 @@ export default function Exercises(props) {
                     state: { exercises }
                   }}
                 >
-                  <h4 className='text-white'>{exercises.name}</h4>
+                  <h4 className='text-light'>{exercises.name}</h4>
                 </Link>
                 <p className='text-secondary'>{exercises.description}</p>
                 <Link

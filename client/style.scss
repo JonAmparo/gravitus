@@ -1,4 +1,4 @@
-$primary: orange;
+$primary: #cac401;
 $danger: firebrick;
 
 @import '~bootstrap/scss/bootstrap';
@@ -19,17 +19,25 @@ $color-dark: darken($color-primary, 40%);
 
 $bg-prim: $darkslategray;
 
-.text-prim {
-  color: $color-primary;
+.bg-darkslategray {
+  background-color: $darkslategray !important;
 }
 
-.text-sec {
-  color: $color-secondary;
+.bg-gravitus {
+  background-color: $gravitus !important;
 }
 
-.bg-prim {
-  background-color: $bg-prim !important;
-}
+// .text-prim {
+//   color: $color-primary;
+// }
+
+// .text-sec {
+//   color: $color-secondary;
+// }
+
+// .bg-prim {
+//   background-color: $bg-prim !important;
+// }
 
 html,
 body,
@@ -58,28 +66,12 @@ li {
   list-style-type: none;
 }
 
-.bg-darkslategray {
-  background-color: $darkslategray !important;
-}
-
-.bg-gravitus {
-  background-color: $gravitus !important;
+.row {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
 }
 
 // ====================== HEADER  ========================= //
-
-.active {
-  // color: rgb(255, 255, 255);
-  // background-color: #000000;
-  color: white;
-  // border-bottom: 2px solid firebrick;
-
-  &:hover {
-    text-decoration: underline;
-    color: white;
-    // color: $color-hover;
-  }
-}
 
 .nav-logo {
   height: 4.5rem;
@@ -88,6 +80,25 @@ li {
 }
 
 .nav-item {
+  text-align: center;
+}
+
+// ====================== LANDING  ========================= //
+.landing {
+  position: relative;
+  background: url('./assets/images/gym.jpg') no-repeat center center/cover;
+  height: 91.7vh;
+}
+
+.landing-inner {
+  color: #fff;
+  height: 70%;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
@@ -111,7 +122,7 @@ img.iconchart {
   width: 75px;
 }
 
-img {
+.icon {
   height: 200px;
   width: 200px;
 }
@@ -132,15 +143,4 @@ div.border-bottom {
 .profile {
   height: 125px;
   width: 125px;
-}
-
-.row {
-  margin-left: 0px !important;
-  margin-right: 0px !important;
-}
-
-.landing {
-  position: relative;
-  background: url('./assets/images/gym.jpg') no-repeat center center/cover;
-  height: 100vh;
 }

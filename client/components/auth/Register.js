@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react';
 import FormInput from '../util/FormInput';
 import Button from '../util/Button';
 import { connect } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { setAlert } from '../../actions/alert';
 import { register } from '../../actions/auth';
 import PropTypes from 'prop-types';
@@ -38,9 +38,11 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 
   return (
     <Fragment>
+      <h1 className='text-center'>Register!</h1>
       <div className='row justify-content-center mt-5'>
         <div className='col-md-8 border border-secondary rounded p-4'>
-          <h1 className='text-center'>Register!</h1>
+          <p className='lead'>Create your account</p>
+
           <form onSubmit={e => onSubmit(e)}>
             <FormInput
               label='Name'
@@ -92,7 +94,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                 type='submit'
                 value='Register'
                 label='Submit'
-                className='btn btn-success mr-2 p-2'
+                className='btn btn-success mr-2 '
               />
               {/* <Button
                 type='submit'
@@ -100,11 +102,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                 label='Submit'
                 className='btn btn-success mr-2 p-2'
               /> */}
-              <Button
-                type='reset'
-                label='Reset'
-                className='btn btn-danger p-2'
-              />
+              <Button type='reset' label='Reset' className='btn btn-danger' />
             </div>
           </form>
         </div>

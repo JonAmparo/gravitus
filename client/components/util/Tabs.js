@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-// import glamorous from 'glamorous';
 import styled from '@emotion/styled';
 import Tab from './Tab';
 
 const ListTabs = styled.ul({
   paddingLeft: 0,
   listStyle: 'none',
-  margin: 0
+  margin: 0,
+  textAlign: 'center'
 });
 
 const TabTitleItem = styled.li(
@@ -36,7 +36,7 @@ const TabTitleItem = styled.li(
 const ActiveTabBorder = styled.div(
   {
     height: 4,
-    backgroundColor: '#0088dd',
+    backgroundColor: '#cac401',
     position: 'absolute',
     bottom: 0,
     transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
@@ -60,7 +60,8 @@ const TabAnchorItem = styled.a({
 
 const TabsContainer = styled.div({
   position: 'relative',
-  borderBottom: '1px solid #dfdfdf'
+  borderBottom: '1px solid #dfdfdf',
+  marginBottom: '10px'
 });
 
 const ReactTabs = styled.div({
@@ -161,91 +162,3 @@ class Tabs extends Component {
 }
 
 export default Tabs;
-
-// function Tabs(props) {
-//   const [tabs, setTabs] = React.useState([]);
-//   console.log('tabs:', tabs)
-//   const [prevActiveTab, setPrevActiveTab] = React.useState({});
-//   const [activeTab, setActiveTab] = React.useState(props.activeTab);
-//   const [tabsElements, setTabsElements] = React.useState([]);
-
-//   addTab = newTab => {
-//     let isNewTabFound;
-
-//     for (let i in state.tabs) {
-//       let tab = state.tabs[i];
-
-//       if (tab.id === newTab.id) {
-//         isNewTabFound = true;
-//         break;
-//       }
-//     }
-
-//     if (!isNewTabFound) {
-//       this.setState((prevState, props) => {
-//         return {
-//           tabs: prevState.tabs.concat(newTab)
-//         };
-//       });
-//     }
-//   };
-
-//   removeTab = tabId => {
-//     this.setState((prevState, props) => {
-//       return {
-//         tabs: prevState.tabs.filter(tab => tab.id !== tabId)
-//       };
-//     });
-//   };
-
-//   onClick = tab => event => {
-//     this.setState((prevState, props) => {
-//       return {
-//         prevActiveTab: prevState.activeTab,
-//         activeTab: tab
-//       };
-//     });
-//   };
-
-//   return (
-//     <ReactTabs>
-//       <TabsContainer>
-//         <ListTabs>
-//           {this.state.tabs.map((tab, index) => (
-//             <TabTitleItem
-//               key={index}
-//               onClick={this.onClick(tab)}
-//               id={tab.id}
-//               innerRef={tabElement => {
-//                 if (!this.state.tabsElements[tab.id]) {
-//                   this.setState((prevState, props) => {
-//                     const tabsElements = prevState.tabsElements;
-//                     tabsElements[tab.id] = tabElement;
-
-//                     return {
-//                       tabsElements
-//                     };
-//                   });
-//                 }
-//               }}
-//               isActiveTab={this.state.activeTab.id === tab.id}
-//             >
-//               <TabAnchorItem>{tab.title}</TabAnchorItem>
-//             </TabTitleItem>
-//           ))}
-//         </ListTabs>
-
-//         <ActiveTabBorder
-//           activeTabElement={this.state.tabsElements[this.state.activeTab.id]}
-//         />
-//       </TabsContainer>
-
-//       {React.Children.map(this.props.children, child =>
-//         React.cloneElement(child, {
-//           activeTab: this.state.activeTab,
-//           addTab: this.addTab
-//         })
-//       )}
-//     </ReactTabs>
-//   );
-// }

@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import gravitus_logo from '../../assets/images/gravitus_logo.svg';
-import styled from 'styled-components';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
@@ -10,11 +9,6 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout, props }) => {
   console.log('props', props);
   const authLinks = (
     <Fragment>
-      {/* <li className='nav-item'>
-        <Link to={'/'} className={'nav-link text-light m-1'}>
-          Home
-        </Link>
-      </li> */}
       <li className='nav-item'>
         <Link to={'/workouts'} className={'nav-link text-light m-1'}>
           Workouts
@@ -66,6 +60,14 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout, props }) => {
       <li className='nav-item'>
         <Link to={'/login'} className={'nav-link text-light m-1'}>
           Login
+        </Link>
+      </li>
+      <li className='nav-item'>
+        <Link
+          to={'/register'}
+          className={'btn btn-success nav-link text-light m-1'}
+        >
+          Register
         </Link>
       </li>
     </Fragment>

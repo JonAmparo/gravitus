@@ -72,7 +72,7 @@ const OtherLinks = () => {
 
 export default function Footer() {
   return (
-    <div className='container-fluid bg-light border-top border-dark pt-3 pb-2'>
+    <div className='container-fluid bg-light border-top border-dark py-3'>
       <div className='row align-items-center justify-content-between'>
         <FooterColumn className='col-sm-6 my-2'>
           <OtherLinks />

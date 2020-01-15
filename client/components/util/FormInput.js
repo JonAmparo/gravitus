@@ -47,7 +47,7 @@ export default function FormInput({
       {type === 'textarea' ? (
         <Fragment>
           <label htmlFor={name} className={labelClassName}>
-            {label}
+            {label} {required ? <span className='text-danger'> *</span> : null}
           </label>
           <textarea
             id={name}
@@ -66,7 +66,7 @@ export default function FormInput({
       ) : (
         <Fragment>
           <label htmlFor={name} className={labelClassName}>
-            {label}
+            {label} {required ? <span className='text-danger'> *</span> : null}
           </label>
           <input
             // id={name}
