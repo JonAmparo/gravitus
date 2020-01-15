@@ -86,7 +86,7 @@ export const createProfile = (
     dispatch(setAlert(edit ? 'Profile Updated' : 'Profile Created', 'success'));
 
     if (!edit) {
-      history.push('/dashboard');
+      history.push('/profile');
     }
   } catch (err) {
     const errors = err.response.data.errors;
@@ -120,7 +120,7 @@ export const addWorkout = (formData, history) => async dispatch => {
 
     dispatch(setAlert('Workout Added', 'success'));
 
-    history.push('/dashboard');
+    history.push('/profile');
   } catch (err) {
     const errors = err.response.data.errors;
 
@@ -176,7 +176,7 @@ export const addWorkoutExercise = (formData, history) => async dispatch => {
 
     dispatch(setAlert('Exercise Added', 'success'));
 
-    history.push('/dashboard');
+    history.push('/profile');
   } catch (err) {
     const errors = err.response.data.errors;
 

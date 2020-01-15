@@ -15,7 +15,7 @@ const WorkoutItem = ({
 }) => (
   <div className='row align-items-center border-bottom border-dark my-2'>
     <div>
-      <Link to={`/profiles/${user}`}>
+      <Link to={`/workouts/${_id}`}>
         <img className='profile' src={avatar} alt={name} />
       </Link>
     </div>

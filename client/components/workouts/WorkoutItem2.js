@@ -18,7 +18,7 @@ const WorkoutItem2 = ({
       <div className='row align-items-center border-bottom border-dark my-2'>
         <Fragment>
           <div>
-            <Link to={`/profiles/${user}`}>
+            <Link to={`/workouts/${_id}`}>
               <img className='profile' src={avatar} alt={name} />
             </Link>
           </div>

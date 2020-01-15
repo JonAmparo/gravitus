@@ -17,7 +17,7 @@ const Workout = ({ getWorkout, workout: { workout, loading }, match }) => {
     <Loading />
   ) : (
     <Fragment>
-      <h1 className='text-center'>Edit Workout</h1>
+      <h1 className='text-center'>Workout</h1>
       <Link to='/workouts' className='btn btn-outline-light'>
         Back to Workouts
       </Link>
