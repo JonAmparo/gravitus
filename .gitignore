@@ -1,6 +1,5 @@
-# Deployment directories
-node_modules
-dist
-# Optional npm cache directory
-.npm
+/node_modules
+npm-debug.log
+.DS_Store
+/*.env
 config/default.json

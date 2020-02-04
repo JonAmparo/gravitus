@@ -11,14 +11,19 @@ module.exports = merge(common, {
   mode: 'production',
   output: {
     filename: '[name].[contentHash].bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/'
   },
+  plugins: [
+    new MiniCssExtractPlugin({ filename: '[name].[contentHash].css' }),
+    new CleanWebpackPlugin()
+  ],
   optimization: {
     minimizer: [
       new OptimizeCssAssetsPlugin(),
       new TerserPlugin(),
       new HtmlWebpackPlugin({
-        template: './client/client/index.html',
+        template: './client/index.html',
         minify: {
           removeAttributeQuotes: true,
           collapseWhitespace: true,
@@ -27,10 +32,6 @@ module.exports = merge(common, {
       })
     ]
   },
-  plugins: [
-    new MiniCssExtractPlugin({ filename: '[name].[contentHash].css' }),
-    new CleanWebpackPlugin()
-  ],
   module: {
     rules: [
       {

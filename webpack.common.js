@@ -19,7 +19,6 @@ module.exports = {
         test: /\.(eot|woff|woff2|ttf|png|svg|jpg|jpeg|gif|ico)$/,
         use: {
           loader: 'file-loader',
-          // loader: 'url-loader?limit=30000&name=[name]-[hash].[ext]',
           options: {
             name: '[name]-[hash].[ext]',
             outputPath: 'assets/images'
