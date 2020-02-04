@@ -11,7 +11,7 @@
     "server": "nodemon server/index.js",
     "client": "webpack-dev-server --config webpack.dev.js",
     "dev": "concurrently \"npm run start\" \"npm run client\"",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config production --config webpack.prod.js"
   },
   "dependencies": {
     "@babel/polyfill": "^7.7.0",
