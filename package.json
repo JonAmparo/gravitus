@@ -5,10 +5,10 @@
   "author": "Jonathan Amparo",
   "license": "ISC",
   "private": true,
-  "main": "server",
+  "main": "server/index.js",
   "scripts": {
-    "start": "nodemon server",
-    "server": "nodemon server",
+    "start": "nodemon server/index.js",
+    "server": "nodemon server/index.js",
     "client": "webpack-dev-server --config webpack.dev.js",
     "dev": "concurrently \"npm run start\" \"npm run client\"",
     "build": "webpack --config webpack.prod.js"
