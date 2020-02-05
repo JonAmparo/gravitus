@@ -7,7 +7,7 @@
   "private": true,
   "main": "server/index.js",
   "scripts": {
-    "start": "nodemon server/index.js",
+    "start": "node server/index.js",
     "server": "nodemon server/index.js",
     "client": "webpack-dev-server --config webpack.dev.js",
     "dev": "concurrently \"npm run start\" \"npm run client\"",
